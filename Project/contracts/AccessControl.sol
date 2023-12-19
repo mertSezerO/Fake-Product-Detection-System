@@ -9,7 +9,7 @@ contract AccessControl {
     event UserAdded(address indexed user);
     event UserRemoved(address indexed user);
 
-    modifier onlyManufacturer() {
+    modifier onlyOwner() {
         require(msg.sender == owner, "Not the contract owner");
         _;
     }
@@ -19,11 +19,12 @@ contract AccessControl {
         _;
     }
 
-    constructor() {
-        owner = msg.sender;
+    constructor(address _owner) {
+        owner = _owner;
+        authorizedUsers[_owner] = true;
     }
 
-    function addAuthorizedUser(address _user) external onlyManufacturer {
+    function addAuthorizedUser(address _user) external onlyOwner {
         require(_user != address(0), "Invalid user address");
         require(!authorizedUsers[_user], "User is already authorized");
 
@@ -31,11 +32,19 @@ contract AccessControl {
         emit UserAdded(_user);
     }
 
-    function removeAuthorizedUser(address _user) external onlyManufacturer {
+    function removeAuthorizedUser(address _user) external onlyOwner {
         require(_user != address(0), "Invalid user address");
         require(authorizedUsers[_user], "User is not authorized");
 
         authorizedUsers[_user] = false;
         emit UserRemoved(_user);
+    }
+
+    function _onlyOwner(address _user) external view returns (bool) {
+        return _user == owner;
+    }
+
+    function _onlyAuthorized(address _user) external view returns (bool) {
+        return authorizedUsers[_user];
     }
 }
