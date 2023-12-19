@@ -2,39 +2,43 @@
 
 pragma solidity ^0.8.0;
 
+import "./Types.sol";
+import "./ProductRegistry.sol";
+
 contract SupplyChain {
-    struct Transaction {
-        address sender;
-        address receiver;
+    ProductRegistry productRegistry;
+
+    mapping(bytes16 => Types.Transaction[]) public transactionHistory;
+    event TransactionCreated(
+        bytes16 indexed productId,
+        address indexed sender,
+        address indexed receiver
+    );
+
+    constructor() {
+        productRegistry = new ProductRegistry();
     }
 
-    //Instead of bytes16, Product will be used.
-    mapping(bytes16 => Transaction[]) public transactionHistory;
-
-    //sender parameter will be replaced
-    function recordTransaction(
-        bytes16 _productId,
-        address _sender,
-        address _receiver
-    ) external {
-        require(
-            _sender != _receiver,
-            "The sender and the receiver cannot be the same"
+    function recordTransaction(bytes16 _productId, address _receiver) external {
+        Types.Product memory product = productRegistry.getProductFromId(
+            _productId
         );
-
-        if (transactionHistory[_productId].length == 0) {
-            //sender = product.owner
+        address sender;
+        if (transactionHistory[product.productId].length == 0) {
+            sender = product.owner;
         } else {
-            //sender = transactionHistory[product].receiver
+            uint length = transactionHistory[product.productId].length;
+            sender = transactionHistory[product.productId][length - 1].receiver;
         }
-        transactionHistory[_productId].push(
-            Transaction({sender: _sender, receiver: _receiver})
+        transactionHistory[product.productId].push(
+            Types.Transaction({sender: sender, receiver: _receiver})
         );
+        emit TransactionCreated(product.productId, sender, _receiver);
     }
 
     function getProductHistory(
         bytes16 _productId
-    ) external view returns (Transaction[] memory) {
+    ) external view returns (Types.Transaction[] memory) {
         return transactionHistory[_productId];
     }
 }

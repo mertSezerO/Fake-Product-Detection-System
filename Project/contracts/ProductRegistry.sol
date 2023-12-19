@@ -2,21 +2,13 @@
 
 pragma solidity ^0.8.0;
 
+import "./Types.sol";
 import "./AccessControl.sol";
 
 contract ProductRegistry {
     AccessControl internal accessControl;
 
-    struct Product {
-        bytes16 productId;
-        address owner;
-        string productName;
-        string shippingDetails;
-        uint256 timestamp;
-        bool exists;
-    }
-
-    mapping(bytes16 => Product) public products;
+    mapping(bytes16 => Types.Product) public products;
     event ProductRegistered(
         bytes16 indexed productId,
         address indexed owner,
@@ -40,9 +32,15 @@ contract ProductRegistry {
             bytes16(keccak256(abi.encodePacked(block.timestamp, msg.sender)));
     }
 
+    function getProductFromId(
+        bytes16 _productId
+    ) external view returns (Types.Product memory) {
+        return products[_productId];
+    }
+
     function getProductDetails(
         bytes16 _productId
-    ) external view isProductExist(_productId) returns (Product memory) {
+    ) external view isProductExist(_productId) returns (Types.Product memory) {
         return products[_productId];
     }
 
@@ -59,7 +57,7 @@ contract ProductRegistry {
         bool _exists
     ) external {
         bytes16 productId = generateUUID();
-        products[productId] = Product({
+        products[productId] = Types.Product({
             productId: productId,
             owner: accessControl.getOwner(),
             productName: _productName,
