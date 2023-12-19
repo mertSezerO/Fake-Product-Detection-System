@@ -12,7 +12,7 @@ contract ProductRegistry {
         address owner;
         string productName;
         string shippingDetails;
-        string timestamp;
+        uint256 timestamp;
         bool exists;
     }
 
@@ -35,6 +35,11 @@ contract ProductRegistry {
         accessControl = new AccessControl(msg.sender);
     }
 
+    function generateUUID() internal view returns (bytes16) {
+        return
+            bytes16(keccak256(abi.encodePacked(block.timestamp, msg.sender)));
+    }
+
     function getProductDetails(
         bytes16 _productId
     ) external view isProductExist(_productId) returns (Product memory) {
@@ -46,5 +51,27 @@ contract ProductRegistry {
         string memory _newDetails
     ) external isProductExist(_productId) returns (string memory) {
         return products[_productId].shippingDetails = _newDetails;
+    }
+
+    function registerProduct(
+        string memory _productName,
+        string memory _shippingDetails,
+        bool _exists
+    ) external {
+        bytes16 productId = generateUUID();
+        products[productId] = Product({
+            productId: productId,
+            owner: accessControl.getOwner(),
+            productName: _productName,
+            shippingDetails: _shippingDetails,
+            timestamp: block.timestamp,
+            exists: _exists
+        });
+
+        emit ProductRegistered(
+            productId,
+            accessControl.getOwner(),
+            _productName
+        );
     }
 }

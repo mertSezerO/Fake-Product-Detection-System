@@ -47,4 +47,8 @@ contract AccessControl {
     function _onlyAuthorized(address _user) external view returns (bool) {
         return authorizedUsers[_user];
     }
+
+    function getOwner() external view returns (address) {
+        return owner;
+    }
 }
