@@ -15,8 +15,8 @@ contract SupplyChain {
         address indexed receiver
     );
 
-    constructor() {
-        productRegistry = new ProductRegistry();
+    constructor(ProductRegistry productReg) {
+        productRegistry = productReg;
     }
 
     function recordTransaction(bytes16 _productId, address _receiver) external {
