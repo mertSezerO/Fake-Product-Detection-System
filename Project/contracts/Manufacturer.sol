@@ -2,6 +2,9 @@
 
 pragma solidity ^0.8.0;
 
+import "./ProductAction.sol";
+import "./SupplyChain.sol";
+
 contract Manufacturer {
     address public owner;
     ProductAction productAction;
@@ -31,6 +34,6 @@ contract Manufacturer {
     }
 
     function createTransaction(address supplier) internal onlyOwner {
-        supplyChain.createTransaction(supplier);
+        supplyChain.recordTransaction(supplier);
     }
 }

@@ -2,10 +2,11 @@
 
 pragma solidity ^0.8.0;
 
+import "./ProductAction.sol";
+
 contract Seller {
     address public owner;
     ProductAction productAction;
-    Authentication authentication;
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Not the contract owner");
@@ -14,15 +15,19 @@ contract Seller {
 
     constructor() {
         owner = msg.sender;
-        productAction = new productAction();
-        authentication = new Authentication();
+        productAction = new ProductAction(owner);
     }
 
-    function editDestination() internal onlyOwner {
-        productAction.updateProduct();
+    function editDestination(
+        bytes16 _productId,
+        string memory _details
+    ) internal onlyOwner {
+        productAction.addProductDetails(_productId, _details);
     }
 
-    function findProduct() internal onlyOwner returns (Product){
-        authentication.authenticate();
+    function findProduct(
+        bytes16 _productId
+    ) internal view onlyOwner returns (Types.Product memory) {
+        return productAction.findProduct(_productId);
     }
 }
