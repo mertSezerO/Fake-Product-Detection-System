@@ -17,23 +17,33 @@ contract Manufacturer {
 
     constructor() {
         owner = msg.sender;
-        productAction = new ProductAction();
-        supplyChain = new SupplyChain(productAction);
+        productAction = new ProductAction(owner);
+        supplyChain = new SupplyChain(owner);
     }
 
-    function addProduct() internal onlyOwner {
-        productAction.registerProduct();
+    function addProduct(
+        string memory _productName,
+        string memory _productStatus
+    ) internal onlyOwner {
+        productAction.registerProduct(_productName, _productStatus);
     }
 
-    function editProduct() internal onlyOwner {
-        productAction.updateProduct();
+    function editProduct(
+        bytes16 _productId,
+        string memory _productName,
+        string memory _productStatus
+    ) internal view onlyOwner {
+        productAction.updateProduct(_productId, _productName, _productStatus);
     }
 
-    function addSupplier(address supplier) internal onlyOwner {
-        supplyChain.addSupplier(supplier);
+    function addSupplier(string memory _supplier) internal onlyOwner {
+        supplyChain.addSupplier(_supplier);
     }
 
-    function createTransaction(address supplier) internal onlyOwner {
-        supplyChain.recordTransaction(supplier);
+    function createTransaction(
+        bytes16 _productId,
+        address _receiver
+    ) internal onlyOwner {
+        supplyChain.recordTransaction(_productId, _receiver);
     }
 }

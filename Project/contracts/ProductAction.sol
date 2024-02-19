@@ -35,8 +35,14 @@ contract ProductAction {
         });
     }
 
-    function updateProduct(Types.Product memory _product) external {
-        products[_product.productId] = _product;
+    function updateProduct(
+        bytes16 _productId,
+        string memory _productName,
+        string memory _productStatus
+    ) external view {
+        Types.Product memory product = products[_productId];
+        product.productName = _productName;
+        product.productStatus = _productStatus;
     }
 
     function generateUUID() internal view returns (bytes16) {
