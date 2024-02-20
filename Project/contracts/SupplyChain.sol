@@ -8,7 +8,7 @@ import "./ProductAction.sol";
 contract SupplyChain {
     address public owner;
     mapping(bytes16 => Types.Transaction[]) public transactionHistory;
-    string[] public suppliers;
+    address[] public suppliers;
 
     event TransactionCreated(
         bytes16 indexed productId,
@@ -41,7 +41,16 @@ contract SupplyChain {
         return transactionHistory[_productId];
     }
 
-    function addSupplier(string memory _supplier) external {
+    function addSupplier(address _supplier) external {
         suppliers.push(_supplier);
+    }
+
+    function isSupplier(address _account) external view returns (bool) {
+        for (uint i = 0; i < suppliers.length; i++) {
+            if (suppliers[i] == _account) {
+                return true;
+            }
+        }
+        return false;
     }
 }

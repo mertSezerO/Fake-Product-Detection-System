@@ -5,13 +5,21 @@ pragma solidity ^0.8.0;
 import "./ProductAction.sol";
 import "./SupplyChain.sol";
 
-contract Manufacturer {
+contract Controller {
     address public owner;
     ProductAction productAction;
     SupplyChain supplyChain;
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Not the contract owner");
+    modifier onlyManufacturer() {
+        require(msg.sender == owner, "Not the manufacturer");
+        _;
+    }
+
+    modifier onlyAuthorized() {
+        require(
+            msg.sender == owner || supplyChain.isSupplier(msg.sender),
+            "Not authorized"
+        );
         _;
     }
 
@@ -24,7 +32,7 @@ contract Manufacturer {
     function addProduct(
         string memory _productName,
         string memory _productStatus
-    ) internal onlyOwner {
+    ) internal onlyManufacturer {
         productAction.registerProduct(_productName, _productStatus);
     }
 
@@ -32,18 +40,31 @@ contract Manufacturer {
         bytes16 _productId,
         string memory _productName,
         string memory _productStatus
-    ) internal view onlyOwner {
+    ) internal view onlyManufacturer {
         productAction.updateProduct(_productId, _productName, _productStatus);
     }
 
-    function addSupplier(string memory _supplier) internal onlyOwner {
+    function addSupplier(address _supplier) internal onlyManufacturer {
         supplyChain.addSupplier(_supplier);
     }
 
     function createTransaction(
         bytes16 _productId,
         address _receiver
-    ) internal onlyOwner {
+    ) internal onlyManufacturer {
         supplyChain.recordTransaction(_productId, _receiver);
+    }
+
+    function findProduct(
+        bytes16 _productId
+    ) internal view onlyAuthorized returns (Types.Product memory) {
+        return productAction.findProduct(_productId);
+    }
+
+    function editProductStatus(
+        bytes16 _productId,
+        string memory _newStatus
+    ) internal onlyAuthorized {
+        productAction.addProductDetails(_productId, _newStatus);
     }
 }
