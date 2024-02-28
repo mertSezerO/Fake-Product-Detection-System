@@ -1,0 +1,293 @@
+{
+  "contractName": "Types",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Types.sol\":\"Types\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Types.sol\":{\"keccak256\":\"0x26aef9b5d2b8182e6196f0bb4c571f38d952f766d1290e919fba4adc7ed9e62f\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://858460709ad892f6fb82a0e35d2f9f3b0d12f8115758ab5d330adcbe0dc59325\",\"dweb:/ipfs/QmUi5JzwjCxn3HnAhLN5Sbq2yr1ehkPewvLkgBSDb4vdEW\"]}},\"version\":1}",
+  "bytecode": "0x6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220e63b1c2acc39df5f2fa4f5da4c30a740003aa9144467cf120e15a3d5ad6315e464736f6c63430008180033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220e63b1c2acc39df5f2fa4f5da4c30a740003aa9144467cf120e15a3d5ad6315e464736f6c63430008180033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "66:274:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "66:274:3:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity ^0.8.0;\r\n\r\nlibrary Types {\r\n    struct Product {\r\n        bytes16 productId;\r\n        address owner;\r\n        string productName;\r\n        string productStatus;\r\n        uint256 timestamp;\r\n    }\r\n\r\n    struct Transaction {\r\n        address sender;\r\n        address receiver;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\User\\Desktop\\Uni Projects\\Bitirme\\Project\\backend\\web3-controller\\contracts\\Types.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Types.sol",
+    "exportedSymbols": {
+      "Types": [
+        479
+      ]
+    },
+    "id": 480,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 462,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Types",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 479,
+        "linearizedBaseContracts": [
+          479
+        ],
+        "name": "Types",
+        "nameLocation": "74:5:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Types.Product",
+            "id": 473,
+            "members": [
+              {
+                "constant": false,
+                "id": 464,
+                "mutability": "mutable",
+                "name": "productId",
+                "nameLocation": "121:9:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 473,
+                "src": "113:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes16",
+                  "typeString": "bytes16"
+                },
+                "typeName": {
+                  "id": 463,
+                  "name": "bytes16",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "113:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes16",
+                    "typeString": "bytes16"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 466,
+                "mutability": "mutable",
+                "name": "owner",
+                "nameLocation": "149:5:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 473,
+                "src": "141:13:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 465,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "141:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 468,
+                "mutability": "mutable",
+                "name": "productName",
+                "nameLocation": "172:11:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 473,
+                "src": "165:18:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 467,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "165:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 470,
+                "mutability": "mutable",
+                "name": "productStatus",
+                "nameLocation": "201:13:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 473,
+                "src": "194:20:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 469,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "194:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 472,
+                "mutability": "mutable",
+                "name": "timestamp",
+                "nameLocation": "233:9:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 473,
+                "src": "225:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 471,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "225:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Product",
+            "nameLocation": "94:7:3",
+            "nodeType": "StructDefinition",
+            "scope": 479,
+            "src": "87:163:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Types.Transaction",
+            "id": 478,
+            "members": [
+              {
+                "constant": false,
+                "id": 475,
+                "mutability": "mutable",
+                "name": "sender",
+                "nameLocation": "296:6:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 478,
+                "src": "288:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 474,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "288:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 477,
+                "mutability": "mutable",
+                "name": "receiver",
+                "nameLocation": "321:8:3",
+                "nodeType": "VariableDeclaration",
+                "scope": 478,
+                "src": "313:16:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 476,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "313:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Transaction",
+            "nameLocation": "265:11:3",
+            "nodeType": "StructDefinition",
+            "scope": 479,
+            "src": "258:79:3",
+            "visibility": "public"
+          }
+        ],
+        "scope": 480,
+        "src": "66:274:3",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "39:303:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.24+commit.e11b9ed9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-02-28T18:14:44.664Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

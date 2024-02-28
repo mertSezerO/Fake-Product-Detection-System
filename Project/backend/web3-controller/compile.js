@@ -2,10 +2,10 @@ const path = require("path");
 const fs = require("fs");
 const solc = require("solc");
 
-const controllerPath = path.resolve(__dirname,"..\\..\\", "contracts", "Controller.sol");
-const productPath = path.resolve(__dirname,"..\\..\\", "contracts", "ProductAction.sol");
-const supplyChainPath = path.resolve(__dirname,"..\\..\\", "contracts", "SupplyChain.sol");
-const typesPath = path.resolve(__dirname,"..\\..\\", "contracts", "Types.sol");
+const controllerPath = path.resolve(__dirname, "contracts", "Controller.sol");
+const productPath = path.resolve(__dirname, "contracts", "ProductAction.sol");
+const supplyChainPath = path.resolve(__dirname,"contracts", "SupplyChain.sol");
+const typesPath = path.resolve(__dirname, "contracts", "Types.sol");
 
 const csource = fs.readFileSync(controllerPath, "utf8");
 const psource = fs.readFileSync(productPath, "utf8");
