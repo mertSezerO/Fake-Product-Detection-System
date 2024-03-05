@@ -9,14 +9,6 @@ contract ProductAction {
 
     mapping(bytes16 => Types.Product) public products;
 
-    // modifier isProductExist(bytes16 _productId) {
-    //     require(
-    //         products[_productId].exists,
-    //         "Product with given id does not exist!"
-    //     );
-    //     _;
-    // }
-
     constructor(address _owner) {
         owner = _owner;
     }
