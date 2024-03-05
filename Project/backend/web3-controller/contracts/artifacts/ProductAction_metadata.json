@@ -1,0 +1,274 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes16",
+						"name": "_productId",
+						"type": "bytes16"
+					},
+					{
+						"internalType": "string",
+						"name": "_newDetails",
+						"type": "string"
+					}
+				],
+				"name": "addProductDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes16",
+						"name": "_productId",
+						"type": "bytes16"
+					}
+				],
+				"name": "findProduct",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes16",
+								"name": "productId",
+								"type": "bytes16"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "productStatus",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Types.Product",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes16",
+						"name": "_productId",
+						"type": "bytes16"
+					}
+				],
+				"name": "getProductDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes16",
+								"name": "productId",
+								"type": "bytes16"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "productStatus",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Types.Product",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes16",
+						"name": "",
+						"type": "bytes16"
+					}
+				],
+				"name": "products",
+				"outputs": [
+					{
+						"internalType": "bytes16",
+						"name": "productId",
+						"type": "bytes16"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "productStatus",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_productStatus",
+						"type": "string"
+					}
+				],
+				"name": "registerProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes16",
+						"name": "_productId",
+						"type": "bytes16"
+					},
+					{
+						"internalType": "string",
+						"name": "_productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_productStatus",
+						"type": "string"
+					}
+				],
+				"name": "updateProduct",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Project/backend/web3-controller/contracts/ProductAction.sol": "ProductAction"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Project/backend/web3-controller/contracts/ProductAction.sol": {
+			"keccak256": "0xb2991f4d300cdfcff62b32ec912003bce6671500d21a0cb7a348aa680177a117",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad10395ff6c26cc677a6130beb5f28cd038b8b09ee226cc543f554b5f039404b",
+				"dweb:/ipfs/QmXhxz16ciLzxupwAmHX45aDdsSy7Zds2MNehgUTaAxtFB"
+			]
+		},
+		"Project/backend/web3-controller/contracts/Types.sol": {
+			"keccak256": "0x26aef9b5d2b8182e6196f0bb4c571f38d952f766d1290e919fba4adc7ed9e62f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://858460709ad892f6fb82a0e35d2f9f3b0d12f8115758ab5d330adcbe0dc59325",
+				"dweb:/ipfs/QmUi5JzwjCxn3HnAhLN5Sbq2yr1ehkPewvLkgBSDb4vdEW"
+			]
+		}
+	},
+	"version": 1
+}

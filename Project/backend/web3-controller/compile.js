@@ -4,7 +4,7 @@ const solc = require("solc");
 
 const controllerPath = path.resolve(__dirname, "contracts", "Controller.sol");
 const productPath = path.resolve(__dirname, "contracts", "ProductAction.sol");
-const supplyChainPath = path.resolve(__dirname,"contracts", "SupplyChain.sol");
+const supplyChainPath = path.resolve(__dirname, "contracts", "SupplyChain.sol");
 const typesPath = path.resolve(__dirname, "contracts", "Types.sol");
 
 const csource = fs.readFileSync(controllerPath, "utf8");
@@ -38,7 +38,7 @@ var input = {
   };
 
 const output = JSON.parse(solc.compile(JSON.stringify(input)))
-// module.exports = output.contracts["Controller"].Controller;
+console.log(output.contracts['Controller.sol']['Controller'].abi);
 module.exports = {
     ControllerABI: output.contracts['Controller.sol']['Controller'].abi,
     ControllerBytecode: output.contracts['Controller.sol']['Controller'].evm.bytecode.object,
