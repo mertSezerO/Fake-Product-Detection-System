@@ -6,25 +6,18 @@ const fileContent = fs.readFileSync(filePath, 'utf-8')
 
 const cleanContent = fileContent.replace(/[^A-Za-z0-9\s]/g, '')
 
-const elementArray = cleanContent.split(/\s+|\n/).map(line => line.trim()).filter(line => line !== '')
+const elementArray = cleanContent.split(/\s+|\n/).map(line => line.trim()).filter(line => line !== '');
 
-const dataArray = [ ]
-
-for(var i=0; i<elementArray.length; i++) {
-    if(elementArray[i] === "Replacing"){
-        dataArray.push(elementArray[i+1])
-        continue
+const dataArray = elementArray.reduce((acc, current, index, arr) => {
+    if (current === "Replacing" || current === "address") {
+        acc.push(arr[index + 1]);
     }
-    if(elementArray[i] === "address"){
-        dataArray.push(elementArray[i+1])
-        continue
-    }
-}
+    return acc;
+}, []);
 
-const obj = {}
-
-for(var i=0; i<dataArray.length; i=i+2) {
-    obj[dataArray[i]] = dataArray[i+1]
+const obj = {};
+for (let i = 0; i < dataArray.length; i += 2) {
+    obj[dataArray[i]] = dataArray[i + 1];
 }
 
 fs.writeFileSync('contract-address.json', JSON.stringify(obj, null, 2))
