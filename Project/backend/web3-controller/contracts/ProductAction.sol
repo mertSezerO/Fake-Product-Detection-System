@@ -9,9 +9,7 @@ contract ProductAction {
 
     mapping(bytes16 => Types.Product) public products;
 
-    constructor(address _owner) {
-        owner = _owner;
-    }
+    constructor() {}
 
     function registerProduct(
         string memory _productName,
@@ -59,5 +57,9 @@ contract ProductAction {
         bytes16 _productId
     ) external view returns (Types.Product memory) {
         return products[_productId];
+    }
+
+    function setOwner(address _owner) public {
+        owner = _owner;
     }
 }

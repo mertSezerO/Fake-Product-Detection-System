@@ -16,9 +16,7 @@ contract SupplyChain {
         address indexed receiver
     );
 
-    constructor(address _owner) {
-        owner = _owner;
-    }
+    constructor() {}
 
     function recordTransaction(bytes16 _productId, address _receiver) external {
         address sender;
@@ -52,5 +50,9 @@ contract SupplyChain {
             }
         }
         return false;
+    }
+
+    function setOwner(address _owner) public {
+        owner = _owner;
     }
 }
