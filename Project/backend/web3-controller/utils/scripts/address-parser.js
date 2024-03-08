@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-//Wrapper function and its export, include ABIs
-
 const reportPath = path.resolve(__dirname,"..", "deployment_report.txt");
 const reportContent = fs.readFileSync(reportPath, 'utf-8');
 

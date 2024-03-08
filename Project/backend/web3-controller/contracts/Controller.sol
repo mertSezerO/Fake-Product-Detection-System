@@ -5,7 +5,6 @@ pragma solidity ^0.8.0;
 contract Controller {
     address public owner;
 
-    event ManufacturerCreated(address owner);
     event ProductAddition(string productName, string productStatus);
     event ProductEdit(
         bytes16 productId,
@@ -32,7 +31,6 @@ contract Controller {
 
     constructor() {
         owner = msg.sender;
-        emit ManufacturerCreated(owner);
     }
 
     function addProduct(
