@@ -1,10 +1,18 @@
 const { contracts } = require("./contract-init");
-const { controller } = contracts
+const { Controller } = contracts
 
 //Transaction fee must be considered
+let owner;
+Controller.methods.owner().call()
+.then((address) => {
+    owner = address;
+    setOwners();
+}).catch((err) => {
+    console.error(err);
+});
 
 //Add Product
-controller.events.ProductAddition((error, event) => {
+Controller.events.ProductAddition((error, event) => {
   if (error) {
       console.error('Error:', error);
   } else {
@@ -13,12 +21,16 @@ controller.events.ProductAddition((error, event) => {
   }
 })
 .on("data", async (event) => {
-    //check parameter if there is an error
-  await contracts.ProductAction.methods.registerProduct(event.returnValues).send({from: controller});
+    await contracts.ProductAction.methods.registerProduct(event.returnValues.productName, event.returnValues.productStatus).send({from: owner, gas: 1000000})
+    .on('receipt', (receipt) => {
+        console.log("Event Logs:", receipt.logs);
+        const productId = receipt.events.ProductRegistered.returnValues.productId;
+        console.log("Product ID:", productId);
+    })
 });
 
 //Edit Product
-controller.events.ProductEdit((error, event) => {
+Controller.events.ProductEdit((error, event) => {
     if (error) {
         console.error('Error:', error);
     } else {
@@ -27,11 +39,11 @@ controller.events.ProductEdit((error, event) => {
     }
 })
 .on("data", async (event) => {
-    await contracts.ProductAction.methods.updateProduct(event.returnValues).send({from: controller});
+    await contracts.ProductAction.methods.updateProduct(event.returnValues).send({from: Controller});
 });
 
 //Add Supplier
-controller.events.SupplierAddition((error, event) => {
+Controller.events.SupplierAddition((error, event) => {
     if (error) {
         console.error('Error:', error);
     } else {
@@ -40,11 +52,11 @@ controller.events.SupplierAddition((error, event) => {
     }
 })
 .on("data", async (event) => {
-    await contracts.SupplyChain.methods.addSupplier(event.returnValues).send({from: controller});
+    await contracts.SupplyChain.methods.addSupplier(event.returnValues).send({from: Controller});
 });
 
 //Record Transaction
-controller.events.TransactionRecord((error, event) => {
+Controller.events.TransactionRecord((error, event) => {
     if (error) {
         console.error('Error:', error);
     } else {
@@ -53,11 +65,11 @@ controller.events.TransactionRecord((error, event) => {
     }
 })
 .on("data", async (event) => {
-    await contracts.SupplyChain.methods.recordTransaction(event.returnValues).send({from: controller});
+    await contracts.SupplyChain.methods.recordTransaction(event.returnValues).send({from: Controller});
 })
 
 //Find Product 
-controller.events.ProductSearch((error, event) => {
+Controller.events.ProductSearch((error, event) => {
     if (error) {
         console.error('Error:', error);
     } else {
@@ -66,11 +78,11 @@ controller.events.ProductSearch((error, event) => {
     }
 })
 .on("data", async (event) => {
-    await contracts.ProductAction.methods.findProduct(event.returnValues).send({from: controller});
+    await contracts.ProductAction.methods.findProduct(event.returnValues).send({from: Controller});
 });
 
 //Update Details
-controller.events.DetailsUpdate((error, event) => {
+Controller.events.DetailsUpdate((error, event) => {
     if (error) {
         console.error('Error:', error);
     } else {
@@ -79,12 +91,10 @@ controller.events.DetailsUpdate((error, event) => {
     }
 })
 .on("data", async (event) => {
-    await contracts.ProductAction.methods.addProductDetails(event.returnValues).send({from: controller});
+    await contracts.ProductAction.methods.addProductDetails(event.returnValues).send({from: Controller});
 });
 
 const setOwners = async () => {
-    await contracts.ProductAction.methods.setOwner(controller.owner).send({from: controller.owner});
-    await contracts.SupplyChain.methods.setOwner(controller.owner).send({from: controller.owner});
+    await contracts.ProductAction.methods.setOwner(owner).send({from: owner});
+    await contracts.SupplyChain.methods.setOwner(owner).send({from: owner});
 }
-
-setOwners();

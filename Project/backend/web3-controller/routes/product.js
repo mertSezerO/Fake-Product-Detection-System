@@ -1,10 +1,12 @@
 const Router = require('express').Router();
 
-Router.post('/product');  // 添加商品 addProduct
+const productController = require('../controllers/product');
 
-Router.put('/product'); //editProduct
+Router.post('/product', productController.addProduct);  // 添加商品 addProduct
 
-Router.patch('/product'); // editProductStatus
+Router.put('/product/:productId'); //editProduct
+
+Router.patch('/product/:productId'); // editProductStatus
 
 Router.get('/product/:productId'); //getProductDetails
 

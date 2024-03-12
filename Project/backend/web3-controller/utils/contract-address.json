@@ -1,6 +1,6 @@
 {
   "Controller": {
-    "address": "0x4b8101F026585bBCb74344e9eC5fC18AD92949D2",
+    "address": "0x42B1625A1b7fb9D372A2E5EC3D89c45e806E1529",
     "abi": [
       {
         "inputs": [],
@@ -24,19 +24,6 @@
           }
         ],
         "name": "DetailsUpdate",
-        "type": "event"
-      },
-      {
-        "anonymous": false,
-        "inputs": [
-          {
-            "indexed": false,
-            "internalType": "address",
-            "name": "owner",
-            "type": "address"
-          }
-        ],
-        "name": "ManufacturerCreated",
         "type": "event"
       },
       {
@@ -248,11 +235,11 @@
     ]
   },
   "Types": {
-    "address": "0xD49034d2d539AA1A5C0E220f87d74318Fb739448",
+    "address": "0xC47ec545740c6e52b6B6108D81B93e2447DB1Bf7",
     "abi": []
   },
   "ProductAction": {
-    "address": "0x203F662496fc0D440002fC8Ec80E9249859dDD1c",
+    "address": "0x5579d7c51939014D1db82Fa2D00e85F25CAB4dBf",
     "abi": [
       {
         "inputs": [],
@@ -327,7 +314,13 @@
           }
         ],
         "name": "registerProduct",
-        "outputs": [],
+        "outputs": [
+          {
+            "internalType": "bytes16",
+            "name": "",
+            "type": "bytes16"
+          }
+        ],
         "stateMutability": "nonpayable",
         "type": "function"
       },
@@ -489,7 +482,7 @@
     ]
   },
   "SupplyChain": {
-    "address": "0x9a681a5d77dF7eD01BafF816D7CEa97841dFB20B",
+    "address": "0x3EA780E50294acaD3F0aFc131796D3A2b85973Fc",
     "abi": [
       {
         "inputs": [],

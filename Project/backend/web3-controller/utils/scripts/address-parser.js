@@ -28,6 +28,6 @@ Object.keys(obj).forEach(key => {
     obj[key].abi = abi;
 });
 
-fs.writeFileSync('../contract-address.json', JSON.stringify(obj, null, 2));
+fs.writeFileSync('./utils/contract-address.json', JSON.stringify(obj, null, 2));
 
 module.exports = obj;

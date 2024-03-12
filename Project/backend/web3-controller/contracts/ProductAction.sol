@@ -14,7 +14,7 @@ contract ProductAction {
     function registerProduct(
         string memory _productName,
         string memory _productStatus
-    ) external {
+    ) external returns (bytes16) {
         bytes16 productId = generateUUID();
         products[productId] = Types.Product({
             productId: productId,
@@ -23,6 +23,7 @@ contract ProductAction {
             productStatus: _productStatus,
             timestamp: block.timestamp
         });
+        return productId;
     }
 
     function updateProduct(
