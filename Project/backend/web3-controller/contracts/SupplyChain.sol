@@ -10,15 +10,38 @@ contract SupplyChain {
     mapping(bytes16 => Types.Transaction[]) public transactionHistory;
     address[] public suppliers;
 
+    event ProductTransactionAccessed(
+        bytes16 productId,
+        Types.Transaction[] transaction
+    );
     event TransactionCreated(
         bytes16 indexed productId,
         address indexed sender,
         address indexed receiver
     );
+    event SupplierAdded(address supplier);
 
-    constructor() {}
+    modifier onlyManufacturer() {
+        require(msg.sender == owner, "Not the manufacturer");
+        _;
+    }
 
-    function recordTransaction(bytes16 _productId, address _receiver) external {
+    modifier onlyAuthorized() {
+        require(
+            (msg.sender == owner) || isSupplier(owner),
+            "Not the manufacturer"
+        );
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function recordTransaction(
+        bytes16 _productId,
+        address _receiver
+    ) external onlyManufacturer {
         address sender;
         if (transactionHistory[_productId].length == 0) {
             sender = owner;
@@ -33,26 +56,24 @@ contract SupplyChain {
         emit TransactionCreated(_productId, sender, _receiver);
     }
 
-    function getProductHistory(
-        bytes16 _productId
-    ) external view returns (Types.Transaction[] memory) {
-        return transactionHistory[_productId];
+    function getProductHistory(bytes16 _productId) external {
+        emit ProductTransactionAccessed(
+            _productId,
+            transactionHistory[_productId]
+        );
     }
 
-    function addSupplier(address _supplier) external {
+    function addSupplier(address _supplier) external onlyManufacturer {
         suppliers.push(_supplier);
+        emit SupplierAdded(_supplier);
     }
 
-    function isSupplier(address _account) external view returns (bool) {
+    function isSupplier(address _account) internal view returns (bool) {
         for (uint i = 0; i < suppliers.length; i++) {
             if (suppliers[i] == _account) {
                 return true;
             }
         }
         return false;
-    }
-
-    function setOwner(address _owner) public {
-        owner = _owner;
     }
 }

@@ -1,8 +1,16 @@
 const { contracts } = require('../utils');
+const { ProductAction, SupplyChain } = contracts;
 
 exports.addProduct = async (req, res, next) => {
     const {productName, productStatus} = req.body;
-    const address = await contracts.Controller.methods.owner().call();
-    contracts.Controller.methods.addProduct(productName, productStatus).send({from: address});
-    return res.status(201).json({message:'Product added successfully'})
+    const address = await ProductAction.methods.owner().call();
+    ProductAction.methods.registerProduct(productName, productStatus).send({from: address, gas:1000000});
+    return res.status(201).json({ message:'Product added successfully' })
+}
+
+exports.findProduct = async (req, res, next) => {
+    const { productId } = req.params;
+    const address = await ProductAction.methods.owner().call();
+    ProductAction.methods.findProduct(productId).send({from: address, gas:1000000});
+    return res.status(200).json({ message: 'Product found!'});
 }

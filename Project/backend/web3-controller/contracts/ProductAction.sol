@@ -7,14 +7,30 @@ import "./Types.sol";
 contract ProductAction {
     address public owner;
 
+    event ProductCreated(bytes16 productId);
+    event ProductUpdated(
+        bytes16 productId,
+        string productName,
+        string productStatus
+    );
+    event ProductAccessed(Types.Product product);
+    event ProductDetailsUpdated(bytes16 productId, string productStatus);
+
     mapping(bytes16 => Types.Product) public products;
 
-    constructor() {}
+    modifier onlyManufacturer() {
+        require(msg.sender == owner, "Not the manufacturer");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     function registerProduct(
         string memory _productName,
         string memory _productStatus
-    ) external returns (bytes16) {
+    ) external onlyManufacturer {
         bytes16 productId = generateUUID();
         products[productId] = Types.Product({
             productId: productId,
@@ -23,17 +39,22 @@ contract ProductAction {
             productStatus: _productStatus,
             timestamp: block.timestamp
         });
-        return productId;
+        emit ProductCreated(productId);
     }
 
     function updateProduct(
         bytes16 _productId,
         string memory _productName,
         string memory _productStatus
-    ) external view {
+    ) external onlyManufacturer {
         Types.Product memory product = products[_productId];
         product.productName = _productName;
         product.productStatus = _productStatus;
+        emit ProductUpdated(
+            product.productId,
+            product.productName,
+            product.productStatus
+        );
     }
 
     function generateUUID() internal view returns (bytes16) {
@@ -41,26 +62,18 @@ contract ProductAction {
             bytes16(keccak256(abi.encodePacked(block.timestamp, msg.sender)));
     }
 
-    function getProductDetails(
-        bytes16 _productId
-    ) external view returns (Types.Product memory) {
-        return products[_productId];
-    }
-
     function addProductDetails(
         bytes16 _productId,
         string memory _newDetails
-    ) external returns (string memory) {
-        return products[_productId].productStatus = _newDetails;
+    ) external onlyManufacturer {
+        products[_productId].productStatus = _newDetails;
+        emit ProductDetailsUpdated(
+            _productId,
+            products[_productId].productStatus
+        );
     }
 
-    function findProduct(
-        bytes16 _productId
-    ) external view returns (Types.Product memory) {
-        return products[_productId];
-    }
-
-    function setOwner(address _owner) public {
-        owner = _owner;
+    function findProduct(bytes16 _productId) external {
+        emit ProductAccessed(products[_productId]);
     }
 }

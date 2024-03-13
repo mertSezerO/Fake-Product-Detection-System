@@ -8,6 +8,6 @@ Router.put('/product/:productId'); //editProduct
 
 Router.patch('/product/:productId'); // editProductStatus
 
-Router.get('/product/:productId'); //getProductDetails
+Router.get('/product/:productId', productController.findProduct); //findProduct
 
 module.exports = Router;
