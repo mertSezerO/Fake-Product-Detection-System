@@ -4,20 +4,6 @@ const { ProductAction, SupplyChain } = contracts;
 const logger = require('./log-config');
 //Transaction fee must be considered
 
-//Add Product
-ProductAction.events.ProductCreated((error, event) => {
-  if (error) {
-      console.error('Error:', error);
-  } else {
-      console.log('Event:', event.event); 
-      console.log('Data:', event.returnValues);
-  }
-})
-.on("data", (event) => {
-    logger.info(`New product added with ID: ${event.returnValues.productId}`);
-    //kafka channel
-});
-
 //Edit Product
 ProductAction.events.ProductUpdated((error, event) => {
     if (error) {
@@ -29,23 +15,6 @@ ProductAction.events.ProductUpdated((error, event) => {
 })
 .on("data", (event) => {
     logger.info(`Product with ID ${event.returnValues} Updated with: ${JSON.stringify(event.returnValues)}`);
-});
-
-//Find Product
-ProductAction.events.ProductAccessed((error, event) => {
-    if (error) {
-        console.error('Error:', error);
-    } else {
-        console.log('Event:', event.event); 
-        console.log('Data:', event.returnValues);
-    }
-})
-.on("data", (event) => {
-    logger.info(`Product Found with ID: ${event.returnValues.product.productId}, 
-    name: ${event.returnValues.product.productName},
-    status: ${event.returnValues.product.productStatus},
-    timestamp: ${event.returnValues.product.timestamp},
-    `);
 });
 
 ProductAction.events.ProductDetailsUpdated((error, event) => {

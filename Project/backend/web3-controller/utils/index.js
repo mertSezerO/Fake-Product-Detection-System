@@ -1,4 +1,3 @@
-require('./scripts/event-handler');
 
 module.exports = {
     wsProvider: require("./scripts/contract-init").wsProvider,
