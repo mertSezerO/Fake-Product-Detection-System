@@ -17,17 +17,6 @@ ProductAction.events.ProductUpdated((error, event) => {
     logger.info(`Product with ID ${event.returnValues} Updated with: ${JSON.stringify(event.returnValues)}`);
 });
 
-ProductAction.events.ProductDetailsUpdated((error, event) => {
-    if (error) {
-        console.error('Error:', error);
-    } else {
-        console.log('Event:', event.event); 
-        console.log('Data:', event.returnValues);
-    }
-})
-.on("data", (event) => {
-    logger.info(`Product Found with ID: ${event.returnValues.product.productId}, with details: ${event.returnValues.product}`);
-});
 
 //Add Supplier
 SupplyChain.events.ProductTransactionAccessed((error, event) => {
