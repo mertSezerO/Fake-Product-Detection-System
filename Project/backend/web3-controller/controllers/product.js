@@ -1,5 +1,5 @@
 const { contracts, logger } = require('../utils');
-const { ProductAction, SupplyChain } = contracts;
+const { ProductAction } = contracts;
 
 exports.addProduct = async (req, res, next) => {
     const {productName, productStatus} = req.body;

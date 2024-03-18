@@ -1,9 +1,11 @@
 const Router = require('express').Router();
 
-Router.post('/supply-chain');  // 添加商品 createTransaction
+const supplyChainController = require('../controllers/supply-chain');
 
-Router.patch('/supply-chain'); //addSupplier
+Router.get('/supply-chain/:productId', supplyChainController.getProductTransactions);
 
-Router.get('/supply-chain/:productId') //getProductHistory
+Router.post('/supply-chain', supplyChainController.createTransaction);
+
+Router.put('/supply-chain', supplyChainController.addNewSupplier);
 
 module.exports = Router;

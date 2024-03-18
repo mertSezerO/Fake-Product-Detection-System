@@ -12,7 +12,7 @@ contract SupplyChain {
 
     event ProductTransactionAccessed(
         bytes16 productId,
-        Types.Transaction[] transaction
+        Types.Transaction[] transactions
     );
     event TransactionCreated(
         bytes16 indexed productId,
