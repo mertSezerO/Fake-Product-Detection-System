@@ -1,9 +1,12 @@
 const { contracts, logger } = require('../utils');
 const { SupplyChain } = contracts;
 
+//Supplier check might be added.
+//Error handling must be implemented.
+
 exports.getProductTransactions = async (req, res, next) => {
     const { productId } = req.params;
-    const address = await ProductAction.methods.owner().call();
+    const address = await SupplyChain.methods.owner().call();
 
     SupplyChain.methods.getProductHistory(productId).send({from: address, gas: 1000000});
 
@@ -24,8 +27,9 @@ exports.getProductTransactions = async (req, res, next) => {
 }
 
 exports.createTransaction = async (req, res, next) => {
-    const { productId, receiver } = req.body;
-    const address = await ProductAction.methods.owner().call();
+    const { productId } = req.params;
+    const { receiver } = req.body;
+    const address = await SupplyChain.methods.owner().call();
 
     SupplyChain.methods.recordTransaction(productId, receiver).send({from: address, gas: 1000000});
 
@@ -40,15 +44,17 @@ exports.createTransaction = async (req, res, next) => {
     return res.status(200)
     .json({
         message: "Transaction created.",
-        productId: productId,
-        sender: sender,
-        receiver: receiver
+        transaction: {
+            productId: productId,
+            sender: sender,
+            receiver: receiver
+        }
     })
 }
 
 exports.addNewSupplier = async (req, res, next) => {
     const { supplier } = req.body;
-    const address = await ProductAction.methods.owner().call();
+    const address = await SupplyChain.methods.owner().call();
 
     SupplyChain.methods.addSupplier(supplier).send({ from: address, gas: 1000000 });
 
