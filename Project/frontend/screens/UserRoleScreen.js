@@ -32,7 +32,8 @@ export default function UserRoleScreen() {
                     </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity className="py-4 bg-gray-900 rounded-xl">
+                <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
+                    onPress={()=> navigation.navigate("ShowProduct")}>
                     <Text className= "font-3xl text-white font-bold text-center">
                         Show All Products
                     </Text>

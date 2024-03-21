@@ -7,14 +7,36 @@ import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
 const AddProductScreen = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const navigation = useNavigation();
-/*
-    const handleLogin = () => {
-        console.info({ email, password });
-    };
-*/
+    const [productName, setProductName] = useState("")
+    const [productStatus, setProductStatus] = useState("")
+
+    const handleAddProduct = async () => {
+        try {
+    
+          const response = await fetch("http://localhost:3000/product", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              productName: productName,
+              productStatus: productStatus,
+            })
+          });
+    
+          if (!response.ok) {
+            throw new Error('HTTP error, status = ' + response.status);
+          }
+    
+          // show all products sayfası
+          //navigate("/products");
+    
+        } catch (error) {
+          console.error("Product addition error:", error);
+        }
+      };
+    
+
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
         <View className="flex-1 justify-start">
@@ -36,24 +58,24 @@ const AddProductScreen = () => {
                 <TextInput
                     className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
                     placeholder="Enter Product Name"
-                    value={email}
-                    onChangeText={(text) => setEmail(text)}
+                    value={productName}
+                    onChangeText={(text) => setProductName(text)}
                     >
                 </TextInput>
                 <Text className="text-gray-700 font-bold mb-1 ml-4">Product Status</Text>
                 <TextInput
                     className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
                     placeholder="Enter Product Status"
-                    value={password}
-                    onChangeText={(text) => setPassword(text)}
+                    value={productStatus}
+                    onChangeText={(text) => setProductStatus(text)}
                     >
                 </TextInput>
                 </View>
                 <View className="mb-20 mt-20 space-y-4">
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
-                    onPress={()=> navigation.navigate('UserRole')}>
+                    onPress={handleAddProduct}>
                     <Text className= "font-3xl text-white font-extrabold text-center">
-                        Add
+                        Add Product
                     </Text>
                 </TouchableOpacity>
                 </View>

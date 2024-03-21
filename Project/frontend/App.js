@@ -5,6 +5,7 @@ import AppNavigation from './navigation/AppNavigation';
 import LoginScreen from './screens/LoginScreen';
 import UserRoleScreen from './screens/UserRoleScreen';
 import AddProductScreen from './screens/AddProductScreen';
+import ShowProductScreen from './screens/ShowProductScreen';
 
 export default function App() {
   return <AppNavigation />;

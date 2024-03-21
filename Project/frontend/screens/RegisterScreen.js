@@ -6,9 +6,10 @@ import { useState } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("");
     const navigation = useNavigation();
 /*
     const handleLogin = () => {
@@ -28,7 +29,7 @@ const LoginScreen = () => {
         <View className="flex-2/3 bg-white px-10 pt-10"
             style={{borderTopLeftRadius: 50, borderTopRightRadius: 50}}>
                 <Text 
-                    className="text-gray font-bold text-4xl text-center">Login
+                    className="text-gray font-bold text-4xl text-center">Register
                 </Text>
             <View className="form space-y-2">
                 <View className="mb-10 mt-10">
@@ -42,24 +43,31 @@ const LoginScreen = () => {
                 </TextInput>
                 <Text className="text-gray-700 font-bold mb-1 ml-4">Password</Text>
                 <TextInput
-                    className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
+                    className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
                     secureTextEntry
                     placeholder="Enter Password"
                     value={password}
                     onChangeText={(text) => setPassword(text)}
                     >
                 </TextInput>
+
+                <Text className="text-gray-700 font-bold mb-1 ml-4">Confirm Password</Text>
+                <TextInput
+                    className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
+                    secureTextEntry
+                    placeholder="Enter Password"
+                    value={confirmPassword}
+                    onChangeText={(text) => setConfirmPassword(text)}
+                    >
+                </TextInput>
+
                 </View>
                 <View className="mb-20 mt-20 space-y-4">
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
-                    onPress={()=> navigation.navigate('UserRole')}>
+                    onPress={()=> navigation.navigate('Login')}>
                     <Text className= "font-3xl text-white font-extrabold text-center">
-                        Login
+                        Register
                     </Text>
-                </TouchableOpacity>
-                <TouchableOpacity className="flex items-center mb-2"
-                    onPress={()=> navigation.navigate('Register')}>
-                    <Text className="text-gray-700 text-center font-bold underline">Don't you have an account?</Text>
                 </TouchableOpacity>
                 </View>
 
@@ -71,4 +79,4 @@ const LoginScreen = () => {
     </ImageBackground>
     )
 }
-export default LoginScreen;
+export default RegisterScreen;
