@@ -15,9 +15,9 @@ contract SupplyChain {
         Types.Transaction[] transactions
     );
     event TransactionCreated(
-        bytes16 indexed productId,
-        address indexed sender,
-        address indexed receiver
+        bytes16 productId,
+        address sender,
+        address receiver
     );
     event SupplierAdded(address supplier);
 

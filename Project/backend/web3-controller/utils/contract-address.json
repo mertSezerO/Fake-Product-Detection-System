@@ -1,10 +1,10 @@
 {
   "Types": {
-    "address": "0x1429165B91742a110812fA8581045197A7146870",
+    "address": "0x9Ea8400584f7A9D50fB1240a7dDE904D6c1952EB",
     "abi": []
   },
   "ProductAction": {
-    "address": "0x4639884b269e522ec769A5fffD20389deF4e5C47",
+    "address": "0xd3094757852e48A462F682CbfF1e2A09a96C825f",
     "abi": [
       {
         "inputs": [],
@@ -237,7 +237,7 @@
     ]
   },
   "SupplyChain": {
-    "address": "0xAc1F78C01ddAcaC3Af83AbA412C709221A120C7e",
+    "address": "0xc1e13Ab3e6AC0ED68Ca5C54D88e2843C6cBDD338",
     "abi": [
       {
         "inputs": [],
@@ -292,19 +292,19 @@
         "anonymous": false,
         "inputs": [
           {
-            "indexed": true,
+            "indexed": false,
             "internalType": "bytes16",
             "name": "productId",
             "type": "bytes16"
           },
           {
-            "indexed": true,
+            "indexed": false,
             "internalType": "address",
             "name": "sender",
             "type": "address"
           },
           {
-            "indexed": true,
+            "indexed": false,
             "internalType": "address",
             "name": "receiver",
             "type": "address"

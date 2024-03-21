@@ -7,7 +7,11 @@ import "./Types.sol";
 contract ProductAction {
     address public owner;
 
-    event ProductCreated(bytes16 productId);
+    event ProductCreated(
+        bytes16 productId,
+        string productName,
+        string productStatus
+    );
     event ProductUpdated(
         bytes16 productId,
         string productName,
@@ -39,7 +43,7 @@ contract ProductAction {
             productStatus: _productStatus,
             timestamp: block.timestamp
         });
-        emit ProductCreated(productId);
+        emit ProductCreated(productId, _productName, _productStatus);
     }
 
     function updateProduct(
