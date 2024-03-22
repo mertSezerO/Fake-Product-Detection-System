@@ -23,3 +23,6 @@
 {"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:38:52.169Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:40:32.141Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:42:33.568Z"}
+{"level":"info","message":"New product added with ID: 0xaf4ecd36b7efe7bb180a519f6deef55b","timestamp":"2024-03-22T10:21:53.676Z"}
+{"level":"info","message":"New product added with ID: 0xb14b6f77f0785271daeb64b73e4f62e9","timestamp":"2024-03-22T10:23:00.868Z"}
+{"level":"info","message":"New product added with ID: 0x844f52931cd7c21eccb580b41cd63490","timestamp":"2024-03-22T10:31:09.418Z"}

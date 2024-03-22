@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, ImageBackground, TouchableOpacity, TextInput } from "react-native";
 import React from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
@@ -16,7 +16,7 @@ const AddProductScreen = () => {
           const response = await fetch("http://localhost:3000/product", {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               productName: productName,
@@ -24,15 +24,15 @@ const AddProductScreen = () => {
             })
           });
     
-          if (!response.ok) {
-            throw new Error('HTTP error, status = ' + response.status);
-          }
+          // if (response.status !== 201) {
+          //   throw new Error('HTTP error, status = ' + response.status);
+          // }
     
           // show all products sayfası
           //navigate("/products");
     
         } catch (error) {
-          console.error("Product addition error:", error.message);
+          console.error("Product addition error:", error);
         }
       };
     

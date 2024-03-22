@@ -1,10 +1,10 @@
 {
   "Types": {
-    "address": "0x9Ea8400584f7A9D50fB1240a7dDE904D6c1952EB",
+    "address": "0x000aDBdE32EeE6561Ce75050139a317e3Fc92380",
     "abi": []
   },
   "ProductAction": {
-    "address": "0xd3094757852e48A462F682CbfF1e2A09a96C825f",
+    "address": "0xaAff5Cc1E6e5DDA4876E1F713c97ac92123fcc5D",
     "abi": [
       {
         "inputs": [],
@@ -59,6 +59,18 @@
             "internalType": "bytes16",
             "name": "productId",
             "type": "bytes16"
+          },
+          {
+            "indexed": false,
+            "internalType": "string",
+            "name": "productName",
+            "type": "string"
+          },
+          {
+            "indexed": false,
+            "internalType": "string",
+            "name": "productStatus",
+            "type": "string"
           }
         ],
         "name": "ProductCreated",
@@ -237,7 +249,7 @@
     ]
   },
   "SupplyChain": {
-    "address": "0xc1e13Ab3e6AC0ED68Ca5C54D88e2843C6cBDD338",
+    "address": "0x7EA133C0223fEafba4332E09e0B5941EFA8c08D0",
     "abi": [
       {
         "inputs": [],
