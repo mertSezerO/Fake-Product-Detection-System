@@ -32,7 +32,7 @@ const AddProductScreen = () => {
           //navigate("/products");
     
         } catch (error) {
-          console.error("Product addition error:", error);
+          console.error("Product addition error:", error.message);
         }
       };
     
