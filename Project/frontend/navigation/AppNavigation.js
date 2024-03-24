@@ -8,6 +8,9 @@ import UserRoleScreen from "../screens/UserRoleScreen";
 import AddProductScreen from "../screens/AddProductScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import ShowProductScreen from "../screens/ShowProductScreen";
+import ProductHistoryScreen from "../screens/ProductHistoryScreen";
+import CounterfeitScreen from "../screens/CounterfeitScreen";
+import CheckScreen from "../screens/CheckScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +24,9 @@ export default function AppNavigation() {
                 <Stack.Screen name='UserRole' component={UserRoleScreen} options={{headerShown: false}}></Stack.Screen>
                 <Stack.Screen name='AddProduct' component={AddProductScreen} options={{headerShown: false}}></Stack.Screen>
                 <Stack.Screen name='ShowProduct' component={ShowProductScreen} options={{headerShown: false}}></Stack.Screen>
+                <Stack.Screen name='ProductHistory' component={ProductHistoryScreen} options={{headerShown: false}}></Stack.Screen>
+                <Stack.Screen name='Counterfeit' component={CounterfeitScreen} options={{headerShown: false}}></Stack.Screen>
+                <Stack.Screen name='Check' component={CheckScreen} options={{headerShown: false}}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )

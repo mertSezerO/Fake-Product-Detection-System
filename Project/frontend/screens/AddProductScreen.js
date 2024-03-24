@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 const AddProductScreen = () => {
     const [productName, setProductName] = useState("")
     const [productStatus, setProductStatus] = useState("")
-
+    const navigation = useNavigation()
     const handleAddProduct = async () => {
         try {
     

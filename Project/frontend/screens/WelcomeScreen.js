@@ -32,7 +32,8 @@ export default function WelcomeScreen() {
                 </TouchableOpacity>
 
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl">
-                    <Text className= "font-3xl text-white font-extrabold text-center">
+                    <Text className= "font-3xl text-white font-extrabold text-center"
+                    onPress={()=> navigation.navigate('Check')}>
                         User
                     </Text>
                 </TouchableOpacity>
