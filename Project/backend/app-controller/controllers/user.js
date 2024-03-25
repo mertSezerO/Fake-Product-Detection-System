@@ -11,34 +11,45 @@ const createToken = (user) => {
   return jwt.sign(jwtData, jwtSecret, { expiresIn: process.env.EXPIRE_TIME });
 };
 
-exports.getUser = (req, res, next) => {
+exports.getUser = async (req, res, next) => {
   const id = req.params;
-  User.findById(id)
-    .then((user) => {
+
+  try {
+    const user = await User.findById(id);
+
+    if(user) {
       return res.status(200).json({ user: user });
-    })
-    .catch((err) => {
+    }
+    else {
       return res.status(400).json({ errorMessage: "User doesn't exist" });
-    });
+    }
+  } 
+  catch (error) {
+    return res.status(500).json({ errorMessage: "Error finding user" });
+  }
 };
 
-exports.getUsers = (req, res, next) => {
-  User.find()
-    .then((users) => {
+exports.getUsers = async (req, res, next) => {
+  try {
+    const users = await User.find();
+
+    if(users) {
       return res.status(200).json({ users: users });
-    })
-    .catch((err) => {
-      return res
-        .status(500)
-        .json({ errorMessage: "Cannot connect to database" });
-    });
+    }
+    else {
+      return res.status(500).json({ errorMessage: "Users couldn't retrieved" });
+    }
+  }
+  catch (error) {
+    return res.status(500).json({ errorMessage: "Error finding users" });
+  }
 };
 
 exports.updateUser = async (req, res, next) => {
 
 };
 
-exports.createUser = (req, res, next) => {
+exports.createUser = async (req, res, next) => {
   const { password } = req.body;
   const hashedPassword = bcrypt.hashSync(password, 10);
   const newUser = {
@@ -46,59 +57,64 @@ exports.createUser = (req, res, next) => {
     email: req.body.email,
     password: hashedPassword,
   };
-  User.create(newUser)
-    .then((result) => {
+
+  try {
+    const user = await User.create(newUser);
+
+    if(user) {
       return res.status(201).json({ message: "User succesfully created" });
-    })
-    .catch((err) => {
-      return res.status(500).json({ errorMessage: "Creation failed" });
-    });
+    }
+    else {
+      return res.status(400).json({ errorMessage: "Creation failed" });
+    }
+  } 
+  catch (error) {
+    return res.status(500).json({ errorMessage: "Error creating user" });
+  }
 };
 
 exports.deleteUser = (req, res, next) => {
   const id = req.params;
-  User.findByIdAndRemove(id)
-    .then((result) => {
+
+  try {
+    const user = User.findByIdAndRemove(id);
+
+    if(user) {
       return res.status(201).json({ message: "User succesfully deleted" });
-    })
-    .catch((err) => {
-      return res.status(500).json({ errorMessage: "Deletion failed" });
-    });
+    }
+    else {
+      return res.status(500).json({ errorMessage: "User doesn't exist" });
+    }
+  } 
+  catch (error) {
+    return res.status(500).json({ errorMessage: "Error deleting user" });    
+  }
 };
 
+exports.loginUser = async (req, res, next) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    bcrypt.compare(req.body.password, user.password, (err, result) => {
+      if (err) {
+        return res.status(500).json({ errorMessage: "Internal server error" });
+      }
 
-exports.loginUser = (req, res, next) => {
-  User.findOne({ email: req.body.email })
-    .then((user) => {
-      bcrypt.compare(req.body.password, user.password, (err, result) => {
+      if (!result) {
+        return res.status(400).json({ errorMessage: "Invalid email and password" });
+      } 
+      else {
         if (err) {
-          return res
-            .status(500)
-            .json({ errorMessage: "Internal server error" });
+          return res.status(500).json({ errorMessage: "Session save error" });
         }
-
-        if (!result) {
-          return res
-            .status(400)
-            .json({ errorMessage: "Invalid email and password" });
-        } else {
-          if (err) {
-            return res.status(500).json({ errorMessage: "Session save error" });
-          }
-          const token = createToken(user);
-          if (!token) {
-            return res
-              .status(500)
-              .json({ errorMessage: "Internal server error" });
-          }
-          return res.status(200).json({
-            token: token,
-            movieList: user.movieList,
-          });
+        const token = createToken(user);
+        if (!token) {
+          return res.status(500).json({ errorMessage: "Token couldn't created" });
         }
-      });
-    })
-    .catch((err) => {
-      return res.status(400).json({ errorMessage: "User doesn't exist" });
+        return res.status(200).json({ token: token });
+      }
     });
+  } 
+  catch (error) {
+    return res.status(500).json({ errorMessage: "Error in login action" });    
+  }
 };
