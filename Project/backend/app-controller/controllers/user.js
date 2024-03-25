@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken");
 const createToken = (user) => {
   const jwtSecret = process.env.SECRET;
   const jwtData = {
-    email: user.email,
     id: user._id,
+    email: user.email
   };
   return jwt.sign(jwtData, jwtSecret, { expiresIn: process.env.EXPIRE_TIME });
 };
@@ -21,7 +21,7 @@ exports.getUser = async (req, res, next) => {
       return res.status(200).json({ user: user });
     }
     else {
-      return res.status(400).json({ errorMessage: "User doesn't exist" });
+      return res.status(404).json({ errorMessage: "User doesn't exist" });
     }
   } 
   catch (error) {
@@ -46,7 +46,22 @@ exports.getUsers = async (req, res, next) => {
 };
 
 exports.updateUser = async (req, res, next) => {
+  const id = req.params;
+  const { password } = req.body;
+  const hashedPassword = bcrypt.hashSync(password, 10);
 
+  try {
+    const user = await User.findByIdAndUpdate(id, {password: hashedPassword});
+    if(user) {
+      return res.status(200).json({ message: "User updated successfully" });
+    }
+    else {
+      return res.status(404).json({ errorMessage: "User with given id couldn't be found"});
+    }
+  } 
+  catch (error) {
+    return res.status(500).json({ errorMessage: "Error updating user"});
+  }
 };
 
 exports.createUser = async (req, res, next) => {
@@ -65,7 +80,7 @@ exports.createUser = async (req, res, next) => {
       return res.status(201).json({ message: "User succesfully created" });
     }
     else {
-      return res.status(400).json({ errorMessage: "Creation failed" });
+      return res.status(500).json({ errorMessage: "Creation failed" });
     }
   } 
   catch (error) {
