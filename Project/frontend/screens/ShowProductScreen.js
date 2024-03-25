@@ -51,9 +51,8 @@ const ShowProductScreen = () => {
                 <View className="bg-gray-200 mb-10 p-5 rounded-full" key={item.key}>
                     <Text className="font-bold text-lg">{item.productName}</Text>
                     <Text>Product Status: {productStatus[index].productStatus}</Text>
-        </View>
-    )) 
-            }
+                </View>
+            ))}
         </ScrollView>
         </View>
 

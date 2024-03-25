@@ -12,7 +12,7 @@ export default function CounterfeitScreen() {
         <View className="flex-1 justify-start">
             <TouchableOpacity
                 className="p-3 ml-4 mt-8"
-                onPress={()=> navigation.navigate('Welcome')}>
+                onPress={()=> navigation.navigate('Check')}>
                 <ArrowLeftIcon size="30" color="white" />
             </TouchableOpacity>
         </View>
@@ -31,8 +31,7 @@ export default function CounterfeitScreen() {
                 <Image source={require('../assets/images/cross.png')}
                     style={{width:150, height:150}}></Image>
                 <TouchableOpacity className="py-4 bg-red-600 rounded-xl mb-20"
-                    style={{width:90}}
-                    onPress={()=> navigation.navigate("AddProduct")}>
+                    style={{width:90}}>
                     <Text className= "font-4xl text-white font-bold text-center">
                         Alert
                     </Text>
