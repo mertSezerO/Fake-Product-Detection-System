@@ -18,6 +18,8 @@ const supplyChainRouter = require('./routes/supply-chain');
 app.use(productRouter);
 app.use(supplyChainRouter);
 
-app.listen(3000, () => {
-  console.log("Listening...");
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log("Listening on port: "+ PORT);
 })

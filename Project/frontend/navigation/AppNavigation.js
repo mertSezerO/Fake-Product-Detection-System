@@ -13,23 +13,27 @@ import CounterfeitScreen from "../screens/CounterfeitScreen";
 import CheckScreen from "../screens/CheckScreen";
 import ProductFoundScreen from "../screens/ProductFoundScreen";
 
+import ProductProvider from '../contexts/productContext';
+
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigation() {
     return(
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName = 'Welcome'>
-                <Stack.Screen name='Welcome' component={WelcomeScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='Register' component={RegisterScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='UserRole' component={UserRoleScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='AddProduct' component={AddProductScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='ShowProduct' component={ShowProductScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='ProductHistory' component={ProductHistoryScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='Counterfeit' component={CounterfeitScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='Check' component={CheckScreen} options={{headerShown: false}}></Stack.Screen>
-                <Stack.Screen name='ProductFound' component={ProductFoundScreen} options={{headerShown: false}}></Stack.Screen>
-            </Stack.Navigator>
-        </NavigationContainer>
+        <ProductProvider>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName = 'Welcome'>
+                    <Stack.Screen name='Welcome' component={WelcomeScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='Register' component={RegisterScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='UserRole' component={UserRoleScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='AddProduct' component={AddProductScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='ShowProduct' component={ShowProductScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='ProductHistory' component={ProductHistoryScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='Counterfeit' component={CounterfeitScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='Check' component={CheckScreen} options={{headerShown: false}}></Stack.Screen>
+                    <Stack.Screen name='ProductFound' component={ProductFoundScreen} options={{headerShown: false}}></Stack.Screen>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </ProductProvider>
     )
 }

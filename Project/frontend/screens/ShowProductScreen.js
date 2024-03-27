@@ -1,34 +1,17 @@
 import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput, ScrollView } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useState } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
-const ShowProductScreen = () => {
-    const [productName, setProductName] = useState([
-        { productName: 'Vitamin', key: "1"},
-        { productName: 'Sunscreen', key: "2"},
-        { productName: 'Vitamin', key: "3"},
-        { productName: 'Sunscreen', key: "4"},
-        { productName: 'Vitamin', key: "5"},
-        { productName: 'Sunscreen', key: "6"},
-        { productName: 'Vitamin', key: "7"},
-        { productName: 'Sunscreen', key: "8"}
-    ]);
+import { ProductContext } from '../contexts/productContext';
 
-    const [productStatus, setProductStatus] = useState([
-        { productStatus: 'Good', key: "1"},
-        { productStatus: 'Bad', key: "2"},
-        { productStatus: 'Good', key: "3"},
-        { productStatus: 'Bad', key: "4"},
-        { productStatus: 'Good', key: "5"},
-        { productStatus: 'Bad', key: "6"},
-        { productStatus: 'Good', key: "7"},
-        { productStatus: 'Bad', key: "8"}
-    ]);
+const ShowProductScreen = () => {
     const navigation = useNavigation();
+
+    const productContext = useContext(ProductContext);
     
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
@@ -47,15 +30,14 @@ const ShowProductScreen = () => {
                 </Text>
             
         <ScrollView>
-            { productName.map((item, index) => (
-                <View className="bg-gray-200 mb-10 p-5 rounded-full" key={item.key}>
+            { productContext.products.map((item, index) => (
+                <View className="bg-gray-200 mb-10 p-5 rounded-full" key={index}>
                     <Text className="font-bold text-lg">{item.productName}</Text>
-                    <Text>Product Status: {productStatus[index].productStatus}</Text>
+                    <Text>Product Status: {productContext.products[index].productStatus}</Text>
                 </View>
             ))}
         </ScrollView>
         </View>
-
         </View>
       <StatusBar style="auto" /> 
     </ImageBackground>

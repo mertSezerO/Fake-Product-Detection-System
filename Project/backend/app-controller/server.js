@@ -5,6 +5,9 @@ require('dotenv').config();
 
 app.use(express.json());
 
+app.use(express.static("controllers/"));
+app.use(express.urlencoded({ extended: false }));
+
 const userRouter = require('./routes/user');
 
 app.use(userRouter);
