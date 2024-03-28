@@ -5,11 +5,22 @@ import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from "@react-navigation/native";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 
+import { ProductContext } from '../contexts/AppContext';
+
 export default function UserRoleScreen() {
     const navigation = useNavigation();
+    const productContext = useContext(ProductContext)
 
     useEffect(async () => {
-        await fetch("http://192.168.41.60:3000/product")
+        const response = await fetch("http://192.168.41.60:3000/product", {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+        })
+
+        const { products } = await response.json();
+        await productContext.setProducts(products);
     }, []);
 
     return (
