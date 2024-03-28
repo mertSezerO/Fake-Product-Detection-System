@@ -18,9 +18,11 @@ contract ProductAction {
         string productStatus
     );
     event ProductAccessed(Types.Product product);
+    event ProductsReturned(Types.Product[] products);
     event ProductDetailsUpdated(bytes16 productId, string productStatus);
 
     mapping(bytes16 => Types.Product) public products;
+    Types.Product[] productList;
 
     modifier onlyManufacturer() {
         require(msg.sender == owner, "Not the manufacturer");
@@ -43,6 +45,7 @@ contract ProductAction {
             productStatus: _productStatus,
             timestamp: block.timestamp
         });
+        productList.push(products[productId]);
         emit ProductCreated(productId, _productName, _productStatus);
     }
 
@@ -79,5 +82,9 @@ contract ProductAction {
 
     function findProduct(bytes16 _productId) external {
         emit ProductAccessed(products[_productId]);
+    }
+
+    function getAllProducts() public {
+        emit ProductsReturned(productList);
     }
 }

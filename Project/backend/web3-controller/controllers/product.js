@@ -129,3 +129,28 @@ exports.updateProductStatus = async (req, res, next) => {
         }
     }
 }
+
+exports.getProducts = async (req, res, next) => {
+    try {
+        const address = await ProductAction.methods.owner().call();
+        ProductAction.methods.getAllProducts().send({from: address, gas:1000000});
+    
+        const productEvent = await new Promise((resolve) => {
+            ProductAction.events.ProductsReturned()
+            .once('data', (event) => resolve(event));
+        });
+        const { products } = productEvent.returnValues;
+        logger.info("All products returned");
+
+        return res.status(200)
+        .json({
+            products: products
+        })
+    } 
+    catch (error) {
+        return res.status(503)
+        .json({
+            message: error.message
+        });
+    }
+}

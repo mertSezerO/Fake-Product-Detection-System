@@ -1,10 +1,10 @@
 {
   "Types": {
-    "address": "0x9634e9F39FB1E7e20c54712B967864a7Ff31E947",
+    "address": "0x68FcF89C9c95e0f4a8909C33eFbc98db5288a7f5",
     "abi": []
   },
   "ProductAction": {
-    "address": "0x4469EbA7103A0Fe703D52f27D8E5430EF7FaC374",
+    "address": "0xb140Cd133C94f06723bCC4C025593491198bFC37",
     "abi": [
       {
         "inputs": [],
@@ -118,6 +118,46 @@
           }
         ],
         "name": "ProductUpdated",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "components": [
+              {
+                "internalType": "bytes16",
+                "name": "productId",
+                "type": "bytes16"
+              },
+              {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "productName",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "productStatus",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+              }
+            ],
+            "indexed": false,
+            "internalType": "struct Types.Product[]",
+            "name": "products",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "ProductsReturned",
         "type": "event"
       },
       {
@@ -245,11 +285,18 @@
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getAllProducts",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
       }
     ]
   },
   "SupplyChain": {
-    "address": "0x427E0f757Ef3e5BD7796e466800ee85A1539064E",
+    "address": "0x7e3D1d4DD24A4df38e3207B2729c3E9aB1c9f388",
     "abi": [
       {
         "inputs": [],
