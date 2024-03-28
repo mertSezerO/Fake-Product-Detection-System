@@ -6,7 +6,7 @@ import { useState } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
-import { ProductContext } from '../contexts/productContext';
+import { ProductContext } from '../contexts/AppContext';
 
 const ShowProductScreen = () => {
     const navigation = useNavigation();

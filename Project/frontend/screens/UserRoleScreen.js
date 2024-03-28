@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from "@react-navigation/native";
@@ -7,6 +7,11 @@ import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 
 export default function UserRoleScreen() {
     const navigation = useNavigation();
+
+    useEffect(async () => {
+        await fetch("http://192.168.41.60:3000/product")
+    }, []);
+
     return (
     <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
         <View className="flex-1 justify-start">

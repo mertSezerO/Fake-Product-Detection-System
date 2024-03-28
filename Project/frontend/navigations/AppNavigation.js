@@ -1,30 +1,24 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import WelcomeScreen from "../screens/WelcomeScreen";
-import LoginScreen from "../screens/LoginScreen";
+
 import UserRoleScreen from "../screens/UserRoleScreen";
 import AddProductScreen from "../screens/AddProductScreen";
-import RegisterScreen from "../screens/RegisterScreen";
 import ShowProductScreen from "../screens/ShowProductScreen";
 import ProductHistoryScreen from "../screens/ProductHistoryScreen";
 import CounterfeitScreen from "../screens/CounterfeitScreen";
 import CheckScreen from "../screens/CheckScreen";
 import ProductFoundScreen from "../screens/ProductFoundScreen";
 
-import ProductProvider from '../contexts/productContext';
+import AppProvider from '../contexts/AppContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigation() {
     return(
-        <ProductProvider>
+        <AppProvider>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName = 'Welcome'>
-                    <Stack.Screen name='Welcome' component={WelcomeScreen} options={{headerShown: false}}></Stack.Screen>
-                    <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}}></Stack.Screen>
-                    <Stack.Screen name='Register' component={RegisterScreen} options={{headerShown: false}}></Stack.Screen>
+                <Stack.Navigator initialRouteName = 'UserRole'>
                     <Stack.Screen name='UserRole' component={UserRoleScreen} options={{headerShown: false}}></Stack.Screen>
                     <Stack.Screen name='AddProduct' component={AddProductScreen} options={{headerShown: false}}></Stack.Screen>
                     <Stack.Screen name='ShowProduct' component={ShowProductScreen} options={{headerShown: false}}></Stack.Screen>
@@ -34,6 +28,6 @@ export default function AppNavigation() {
                     <Stack.Screen name='ProductFound' component={ProductFoundScreen} options={{headerShown: false}}></Stack.Screen>
                 </Stack.Navigator>
             </NavigationContainer>
-        </ProductProvider>
+        </AppProvider>
     )
 }
