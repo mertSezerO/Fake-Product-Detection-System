@@ -2,7 +2,6 @@ const { contracts, logger } = require('../utils');
 const { SupplyChain } = contracts;
 
 //Supplier check might be added.
-//Error handling must be implemented.
 
 exports.getProductTransactions = async (req, res, next) => {
     const { productId } = req.params;

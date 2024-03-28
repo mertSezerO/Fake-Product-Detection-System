@@ -42,8 +42,7 @@ contract ProductAction {
             productId: productId,
             owner: owner,
             productName: _productName,
-            productStatus: _productStatus,
-            timestamp: block.timestamp
+            productStatus: _productStatus
         });
         productList.push(products[productId]);
         emit ProductCreated(productId, _productName, _productStatus);

@@ -1,10 +1,9 @@
 import AuthNavigation from './navigations/AuthNavigation';
-import AppNavigation from "./navigation/AppNavigation";
+import AppNavigation from "./navigations/AppNavigation";
 
 export default function App() {
   return (
     <>
-    <AuthNavigation/>
     <AppNavigation />
     </>
   )

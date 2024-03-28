@@ -1,10 +1,10 @@
 {
   "Types": {
-    "address": "0x68FcF89C9c95e0f4a8909C33eFbc98db5288a7f5",
+    "address": "0x5d540b497E9148f9630B7A14090709ED25B4A1c9",
     "abi": []
   },
   "ProductAction": {
-    "address": "0xb140Cd133C94f06723bCC4C025593491198bFC37",
+    "address": "0xDb92fb0cD1fE8DF83174418e909BfcFDCb0B10b5",
     "abi": [
       {
         "inputs": [],
@@ -35,11 +35,6 @@
                 "internalType": "string",
                 "name": "productStatus",
                 "type": "string"
-              },
-              {
-                "internalType": "uint256",
-                "name": "timestamp",
-                "type": "uint256"
               }
             ],
             "indexed": false,
@@ -144,11 +139,6 @@
                 "internalType": "string",
                 "name": "productStatus",
                 "type": "string"
-              },
-              {
-                "internalType": "uint256",
-                "name": "timestamp",
-                "type": "uint256"
               }
             ],
             "indexed": false,
@@ -203,11 +193,6 @@
             "internalType": "string",
             "name": "productStatus",
             "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "timestamp",
-            "type": "uint256"
           }
         ],
         "stateMutability": "view",
@@ -296,7 +281,7 @@
     ]
   },
   "SupplyChain": {
-    "address": "0x7e3D1d4DD24A4df38e3207B2729c3E9aB1c9f388",
+    "address": "0x5B66BcC8eb9d7AD7d4D8193Bb143b65dD68d56a0",
     "abi": [
       {
         "inputs": [],

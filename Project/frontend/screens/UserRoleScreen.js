@@ -1,26 +1,39 @@
 import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput } from "react-native";
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from "@react-navigation/native";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 
-import { ProductContext } from '../contexts/AppContext';
+import { AppContext } from '../contexts/AppContext';
 
 export default function UserRoleScreen() {
     const navigation = useNavigation();
-    const productContext = useContext(ProductContext)
+    const productContext = useContext(AppContext);
 
-    useEffect(async () => {
-        const response = await fetch("http://192.168.41.60:3000/product", {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("http://192.168.41.60:3000/product", {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Failed to fetch products');
+                }
+    
+                const { products } = await response.json();
+                await productContext.setProducts(products);
+            } catch (error) {
+                // Handle errors here
+                console.error('Error fetching products:', error);
             }
-        })
-
-        const { products } = await response.json();
-        await productContext.setProducts(products);
+        };
+    
+        fetchData();
     }, []);
 
     return (

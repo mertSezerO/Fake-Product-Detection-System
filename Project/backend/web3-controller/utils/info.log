@@ -1,45 +1,10 @@
-{"level":"info","message":"Product Found with ID: 0x7189fb75600ea0453e2e922e93befa71, name: Aspirin, status: Coki, timestamp: 1710496956","timestamp":"2024-03-15T10:33:57.371Z"}
-{"level":"info","message":"Product Found with ID: 0x7189fb75600ea0453e2e922e93befa71, name: Aspirin, status: Coki, timestamp: 1710496956","timestamp":"2024-03-15T10:34:19.057Z"}
-{"level":"info","message":"Product Found with ID: 0x7189fb75600ea0453e2e922e93befa71, name: undefined, status: undefined, timestamp: 1710496956","timestamp":"2024-03-15T10:36:05.403Z"}
-{"level":"info","message":"New product added with ID: 0xf119a4ea78a8d133b5ab530677794a52","timestamp":"2024-03-15T10:38:29.877Z"}
-{"level":"info","message":"Product Found with ID: 0xf119a4ea78a8d133b5ab530677794a52, name: undefined, status: undefined, timestamp: 1710499109","timestamp":"2024-03-15T10:38:35.182Z"}
-{"level":"info","message":"New product added with ID: 0x8ec73b97112d8a9770b04c05a56d4bfc","timestamp":"2024-03-18T08:54:12.552Z"}
-{"level":"info","message":"Product Found with ID: 0x8ec73b97112d8a9770b04c05a56d4bfc, name: undefined, status: undefined, timestamp: 1710752052","timestamp":"2024-03-18T08:54:21.694Z"}
-{"level":"info","message":"New transaction for product with ID: 0x8ec73b97112d8a9770b04c05a56d4bfc, transaction: {\"receiver\":\"0x1C969E72b2b065550A52961ACb88c0bbC06Dc700\",\"sender\":\"0x9a52038c4D12428DEb7ea80AD853Cb8b41A2c689\"}","timestamp":"2024-03-18T08:59:07.488Z"}
-{"level":"info","message":"New transaction for product with ID: 0x8ec73b97112d8a9770b04c05a56d4bfc, transaction: {\"receiver\":\"0x10C543fc1897a2Abc46964Ace7332DDe1b199d79\",\"sender\":\"0x1C969E72b2b065550A52961ACb88c0bbC06Dc700\"}","timestamp":"2024-03-18T08:59:23.318Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x8ec73b97112d8a9770b04c05a56d4bfc, transactions:[object Object],[object Object]","timestamp":"2024-03-18T08:59:46.795Z"}
-{"level":"info","message":"New product added with ID: 0xbb689ba94649d7311202b581eb96d9f7","timestamp":"2024-03-18T11:24:46.439Z"}
-{"level":"info","message":"Product Found with ID: 0xbb689ba94649d7311202b581eb96d9f7, name: undefined, status: undefined, timestamp: 1710761086","timestamp":"2024-03-18T11:24:51.969Z"}
-{"level":"info","message":"New product added with ID: 0x54237d309fa875d412b511842d8f8026","timestamp":"2024-03-18T11:30:51.698Z"}
-{"level":"info","message":"Product Found with ID: 0x54237d309fa875d412b511842d8f8026, name: undefined, status: undefined, timestamp: 1710761451","timestamp":"2024-03-18T11:30:57.910Z"}
-{"level":"info","message":"New transaction for product with ID: 0x54237d309fa875d412b511842d8f8026, transaction: {\"receiver\":\"0x10C543fc1897a2Abc46964Ace7332DDe1b199d79\",\"sender\":\"0x9a52038c4D12428DEb7ea80AD853Cb8b41A2c689\"}","timestamp":"2024-03-18T11:31:09.176Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:31:22.083Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:35:02.605Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:35:11.993Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:35:39.093Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:36:05.947Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:36:47.021Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:38:37.933Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:38:52.169Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:40:32.141Z"}
-{"level":"info","message":"Transactions of Product with ID: 0x54237d309fa875d412b511842d8f8026, transactions:[object Object]","timestamp":"2024-03-18T11:42:33.568Z"}
-{"level":"info","message":"New product added with ID: 0xaf4ecd36b7efe7bb180a519f6deef55b","timestamp":"2024-03-22T10:21:53.676Z"}
-{"level":"info","message":"New product added with ID: 0xb14b6f77f0785271daeb64b73e4f62e9","timestamp":"2024-03-22T10:23:00.868Z"}
-{"level":"info","message":"New product added with ID: 0x844f52931cd7c21eccb580b41cd63490","timestamp":"2024-03-22T10:31:09.418Z"}
-{"level":"info","message":"New product added with ID: 0x3e7e45327857d873f38a6404226a9cc2","timestamp":"2024-03-26T09:50:40.199Z"}
-{"level":"info","message":"New product added with ID: 0xdc8cb4876340fb333028b29c5d5e6277","timestamp":"2024-03-26T09:51:20.396Z"}
-{"level":"info","message":"New product added with ID: 0x671b6ecc273fb534257dbd26dba04ef6","timestamp":"2024-03-27T17:51:29.940Z"}
-{"level":"info","message":"New product added with ID: 0x34db62c7e437956cad4cd5bf2ff37ee7","timestamp":"2024-03-27T17:51:44.102Z"}
-{"level":"info","message":"New product added with ID: 0x8657aeffb70bb67d7a11e6ba920a1aed","timestamp":"2024-03-27T18:57:42.206Z"}
-{"level":"info","message":"New product added with ID: 0x63b11b59284443d159e08e249de6ac00","timestamp":"2024-03-27T18:58:11.699Z"}
-{"level":"info","message":"New product added with ID: 0x2dd96d7d66aff5c869b3f5d59892d966","timestamp":"2024-03-27T18:59:09.709Z"}
-{"level":"info","message":"New product added with ID: 0x598ebf0b2d0cef66801a91d2a20aea20","timestamp":"2024-03-27T19:06:47.699Z"}
-{"level":"info","message":"New product added with ID: 0x324a0c2f97ac4ab2ec657a1099889bb0","timestamp":"2024-03-27T19:08:02.069Z"}
-{"level":"info","message":"New product added with ID: 0x3a9bc3d9b62ad3e03e74600939cb4ad2","timestamp":"2024-03-27T19:09:25.894Z"}
-{"level":"info","message":"New product added with ID: 0xd30abfd6a78a4c71baed1ff2dae5a9cd","timestamp":"2024-03-27T19:11:00.402Z"}
-{"level":"info","message":"New product added with ID: 0x57ef62f6cbf35af143274d89f9148546","timestamp":"2024-03-27T19:11:42.245Z"}
-{"level":"info","message":"New product added with ID: 0x5be97951cd178b73e7f4424e450e8dff","timestamp":"2024-03-27T19:12:02.349Z"}
-{"level":"info","message":"New product added with ID: 0xd183c8be854aedbe1d1f92772d9f4a70","timestamp":"2024-03-27T19:12:58.963Z"}
-{"level":"info","message":"New product added with ID: 0xf27d1e60ce93f2b59995d7a562ca4f63","timestamp":"2024-03-27T19:13:27.624Z"}
-{"level":"info","message":"New product added with ID: 0x442fd4d89aa4fed68951f21b12f706c6","timestamp":"2024-03-27T19:15:33.308Z"}
-{"level":"info","message":"Product Found with ID: 0x442fd4d89aa4fed68951f21b12f706c6, name: undefined, status: undefined, timestamp: 1711566933","timestamp":"2024-03-27T19:15:50.611Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:31:40.647Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:31:58.118Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:32:50.358Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:34:12.967Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:34:27.197Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:34:56.703Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:36:52.342Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:37:05.822Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:38:09.781Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-03-28T19:38:19.185Z"}

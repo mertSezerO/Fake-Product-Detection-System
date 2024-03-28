@@ -8,7 +8,6 @@ library Types {
         address owner;
         string productName;
         string productStatus;
-        uint256 timestamp;
     }
 
     struct Transaction {

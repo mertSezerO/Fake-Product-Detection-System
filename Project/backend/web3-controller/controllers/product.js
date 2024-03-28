@@ -59,14 +59,14 @@ exports.findProduct = async (req, res, next) => {
             ProductAction.events.ProductAccessed()
             .once('data', (event) => resolve(event));
         });
-    
+
         const product = {
             productId: productEvent.returnValues.product.productId.toString(),
             name: productEvent.returnValues.product.productName,
             status:  productEvent.returnValues.product.productStatus,
-            timestamp: productEvent.returnValues.product.timestamp.toString(),
+            timestamp: new Date()
         }
-        logger.info(`Product Found with ID: ${product.productId}, name: ${product.productName}, status: ${product.productStatus}, timestamp: ${product.timestamp}`);
+        logger.info(`Product Found with ID: ${product.productId}, name: ${product.name}, status: ${product.status}`);
     
         return res.status(200)
         .json({ 
