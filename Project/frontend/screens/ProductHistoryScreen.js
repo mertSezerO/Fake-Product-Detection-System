@@ -6,13 +6,13 @@ import { useEffect, useState, useContext } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation, useRoute } from "@react-navigation/native";
 
-import { AppContext } from '../contexts/AppContext';
+import { CoreContext } from '../contexts/CoreContext';
 
 const ProductHistoryScreen = () => {
     const route = useRoute();
     const { productId } = route.params;
     const navigation = useNavigation();
-    const productContext = useContext(AppContext);
+    const productContext = useContext(CoreContext);
     const [productHistory, setProductHistory] = useState([]); 
 
     useEffect(() => {

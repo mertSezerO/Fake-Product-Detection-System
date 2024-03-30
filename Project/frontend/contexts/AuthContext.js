@@ -4,8 +4,9 @@ const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
   const state = {
-  };
 
+  };
+  
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
 }
 

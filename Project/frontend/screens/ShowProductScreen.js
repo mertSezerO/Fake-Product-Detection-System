@@ -6,12 +6,12 @@ import { useState } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
-import { AppContext } from '../contexts/AppContext';
+import { CoreContext } from '../contexts/CoreContext';
 
 const ShowProductScreen = () => {
     const navigation = useNavigation();
 
-    const productContext = useContext(AppContext);
+    const productContext = useContext(CoreContext);
     
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>

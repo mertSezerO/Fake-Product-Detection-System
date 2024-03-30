@@ -1,10 +1,11 @@
-import AuthNavigation from './navigations/AuthNavigation';
-import AppNavigation from "./navigations/AppNavigation";
+import AppProvider from './contexts/AppContext';
+import AppNavigation from './navigations/AppNavigation';
 
 export default function App() {
+
   return (
-    <>
-    <AppNavigation />
-    </>
+    <AppProvider>
+      <AppNavigation />
+    </AppProvider>
   )
 }

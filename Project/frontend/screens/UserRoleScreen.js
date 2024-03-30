@@ -5,11 +5,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from "@react-navigation/native";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 
-import { AppContext } from '../contexts/AppContext';
+import { CoreContext } from '../contexts/CoreContext';
 
 export default function UserRoleScreen() {
     const navigation = useNavigation();
-    const productContext = useContext(AppContext);
+    const productContext = useContext(CoreContext);
 
     useEffect(() => {
         const fetchData = async () => {

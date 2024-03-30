@@ -3,13 +3,13 @@ import { createContext, useState } from "react";
 const AppContext = createContext();
 
 export default function AppProvider({ children }) {
-    const [products, setProducts] = useState([]);
-
+    const [userToken, setUserToken] = useState();
+      
     const state = {
-        products,
-        setProducts
+        userToken,
+        setUserToken
     };
-
+    
     return <AppContext.Provider value={state}>{children}</AppContext.Provider>;
 }
 

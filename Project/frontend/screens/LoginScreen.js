@@ -20,7 +20,7 @@ const LoginScreen = () => {
         <View className="flex-1 justify-start">
             <TouchableOpacity
                 className="p-3 ml-4 mt-8"
-                onPress={()=> navigation.navigate('Welcome')}>
+                onPress={()=> navigation.navigate('Core', {screen: 'Welcome'})}>
                 <ArrowLeftIcon size="30" color="white" />
             </TouchableOpacity>
         </View>
@@ -52,7 +52,7 @@ const LoginScreen = () => {
                 </View>
                 <View className="mb-20 mt-20 space-y-4">
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
-                    onPress={()=> navigation.navigate('UserRole')}>
+                    onPress={()=> navigation.navigate('Core',{screen: 'UserRole'})}>
                     <Text className= "font-3xl text-white font-extrabold text-center">
                         Login
                     </Text>

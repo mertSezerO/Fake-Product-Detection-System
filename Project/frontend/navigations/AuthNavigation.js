@@ -13,13 +13,11 @@ const Stack = createNativeStackNavigator();
 export default function AuthNavigation() {
     return (
         <AuthProvider>
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName="Welcome">
-                    <Stack.Screen name='Welcome' component={WelcomeScreen} options={{headerShown: false}}></Stack.Screen>
-                    <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}}></Stack.Screen>
-                    <Stack.Screen name='Register' component={RegisterScreen} options={{headerShown: false}}></Stack.Screen>
-                </Stack.Navigator>
-            </NavigationContainer>
+            <Stack.Navigator initialRouteName="Welcome">
+                <Stack.Screen name='Welcome' component={WelcomeScreen} options={{headerShown: false}}></Stack.Screen>
+                <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}}></Stack.Screen>
+                <Stack.Screen name='Register' component={RegisterScreen} options={{headerShown: false}}></Stack.Screen>
+            </Stack.Navigator>
         </AuthProvider>
     )
 }
