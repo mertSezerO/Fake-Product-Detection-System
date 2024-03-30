@@ -6,13 +6,13 @@ import { useState, useContext } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
-import { ProductContext } from '../contexts/AppContext';
+import { AppContext } from '../contexts/AppContext';
 
 const AddProductScreen = () => {
     const [productName, setProductName] = useState("")
     const [productStatus, setProductStatus] = useState("")
     const navigation = useNavigation()
-    const productContext = useContext(ProductContext)
+    const productContext = useContext(AppContext)
 
     const handleAddProduct = async () => {
         try {
