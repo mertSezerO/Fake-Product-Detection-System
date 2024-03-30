@@ -28,11 +28,9 @@ export default function UserRoleScreen() {
                 const { products } = await response.json();
                 await productContext.setProducts(products);
             } catch (error) {
-                // Handle errors here
                 console.error('Error fetching products:', error);
             }
         };
-    
         fetchData();
     }, []);
 

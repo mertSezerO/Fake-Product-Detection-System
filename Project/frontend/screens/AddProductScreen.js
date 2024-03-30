@@ -31,12 +31,12 @@ const AddProductScreen = () => {
             throw new Error('HTTP error, status = ' + response.status);
           }
 
-          const {productId} = await response.json();
-          console.log(productId);
+          const { productId } = await response.json();
 
           const newProduct = {
+            productId: productId,
             productName: productName,
-             productStatus: productStatus
+            productStatus: productStatus
           };
           const newProducts = [...productContext.products, newProduct];
           

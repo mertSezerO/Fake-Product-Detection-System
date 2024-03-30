@@ -2,42 +2,39 @@ import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput,
 import React from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+
+import { AppContext } from '../contexts/AppContext';
 
 const ProductHistoryScreen = () => {
-    const [productName, setProductName] = useState([
-        { productName: 'Multivitamin', key: "1"},
-        { productName: 'Multivitamin', key: "2"},
-        { productName: 'Multivitamin', key: "3"}
-    ]);
-
-    const [transactionDate, setTransactionDate] = useState([
-        { transactionDate: '23-01-23', key: "1"},
-        { transactionDate: '23-01-23', key: "2"},
-        { transactionDate: '23-01-23', key: "3"}
-    ]);
-
-    const [transactionSource, setTransactionSource] = useState([
-        { sender: 'A Company', key: "1"},
-        { sender: 'A Company', key: "2"},
-        { sender: 'A Company', key: "3"}
-    ]);
-
-    const [transactionDestination, setTransactionDestination] = useState([
-        { receiver: 'B Company', key: "1"},
-        { receiver: 'B Company', key: "2"},
-        { receiver: 'B Company', key: "3"}
-    ]);
-
-    const [productStatus, setProductStatus] = useState([
-        { productStatus: 'Good', key: "1"},
-        { productStatus: 'Good', key: "2"},
-        { productStatus: 'Good', key: "3"}
-    ]);
-
+    const route = useRoute();
+    const { productId } = route.params;
     const navigation = useNavigation();
+    const productContext = useContext(AppContext);
+    const [productHistory, setProductHistory] = useState([]); 
+
+    useEffect(() => {
+        const gatherHistory = async () => {
+            try {
+                const response = await fetch("http://192.168.41.60:3000/supply-chain/" + productId, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const { transactions } = await response.json();
+                setProductHistory(transactions);
+            } 
+            catch (error) {
+                console.error('Error fetching product history:', error);
+            }
+        }
+
+        gatherHistory();
+    }, [])
     
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
@@ -58,15 +55,15 @@ const ProductHistoryScreen = () => {
                 <Text className="font-bold text-xl mb-5">Multivitamin</Text>
         <ScrollView>
         <View className="border-l border-gray-500 h-full mr-4">
-            { productName.map((item, index) => (
-                <View className="bg-gray-300 mb-10 p-5 rounded-full" key={item.key}>
+            { productHistory.map((item, index) => (
+                <View className="bg-gray-300 mb-10 p-5 rounded-full" key={index}>
                     <Image className="flex-start" source={require('../assets/images/box.png')} 
                         style={{width:30, height:30}}></Image>
                     <View>
-                    <Text>Date: {transactionDate[index].transactionDate}</Text>
-                    <Text>Source: {transactionSource[index].sender}</Text>
-                    <Text>Destination: {transactionDestination[index].receiver}</Text>
-                    <Text>Condition: {productStatus[index].productStatus}</Text>
+                    <Text>Date:</Text>
+                    <Text>Source: {item.sender}</Text>
+                    <Text>Destination: {item.receiver}</Text>
+                    <Text>Condition: {productContext.products[productId].productStatus}</Text>
                     </View>
                 </View>
             ))}
