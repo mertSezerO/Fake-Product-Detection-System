@@ -3,12 +3,15 @@ const app  = express();
 
 const mongoose = require('mongoose');
 
+const cors = require('cors');
+const CORS = cors({
+  origin:"*"
+})
+
 require('dotenv').config();
 
+app.use(CORS);
 app.use(express.json());
-
-app.use(express.static("controllers/"));
-app.use(express.urlencoded({ extended: false }));
 
 const userRouter = require('./routes/user');
 
