@@ -11,11 +11,36 @@ const RegisterScreen = () => {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigation = useNavigation();
-/*
-    const handleLogin = () => {
-        console.info({ email, password });
+
+    const handleRegister = async () => {
+        try {
+            if(password === confirmPassword) {
+                const response = await fetch("http://192.168.41.60:3001/users", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                });
+                
+            if(response.status !== 201) {
+                throw Error(response.message);
+            }
+            
+            navigation.navigate('Login');
+            }
+            else {
+                throw Error('Passwords are not the same');
+            }
+        } 
+        catch (error) {
+            console.log(error);
+        }
     };
-*/
+
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
         <View className="flex-1 justify-start">
@@ -64,7 +89,7 @@ const RegisterScreen = () => {
                 </View>
                 <View className="mb-20 mt-20 space-y-4">
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
-                    onPress={()=> navigation.navigate('Login')}>
+                    onPress={()=> handleRegister()}>
                     <Text className= "font-3xl text-white font-extrabold text-center">
                         Register
                     </Text>
