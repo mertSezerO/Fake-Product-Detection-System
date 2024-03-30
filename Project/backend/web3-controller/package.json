@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "truffle": "^5.11.5",
     "winston": "^3.12.0"
   }

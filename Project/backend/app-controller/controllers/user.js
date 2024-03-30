@@ -95,7 +95,7 @@ exports.deleteUser = (req, res, next) => {
     const user = User.findByIdAndRemove(id);
 
     if(user) {
-      return res.status(201).json({ message: "User succesfully deleted" });
+      return res.status(200).json({ message: "User succesfully deleted" });
     }
     else {
       return res.status(500).json({ errorMessage: "User doesn't exist" });
@@ -125,7 +125,7 @@ exports.loginUser = async (req, res, next) => {
         if (!token) {
           return res.status(500).json({ errorMessage: "Token couldn't created" });
         }
-        return res.status(200).json({ token: token });
+        return res.status(201).json({ token: token });
       }
     });
   } 
