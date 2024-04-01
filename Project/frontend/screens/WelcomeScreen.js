@@ -1,11 +1,30 @@
-import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput } from "react-native";
-import React from "react";
+import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput, useColorScheme } from "react-native";
+import React, { useContext } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from "@react-navigation/native";
 
+import {AppContext} from '../contexts/AppContext';
+
 export default function WelcomeScreen() {
     const navigation = useNavigation();
+    const appContext = useContext(AppContext);
+
+    const handleAction = async (role) => {
+        if(role === "User") {
+            await appContext.setUserRole(role);
+            navigation.navigate('Core', {screen: 'Check'});
+        }
+        else if(role === "Seller") {
+            await appContext.setUserRole(role);
+            navigation.navigate('Login');
+        }
+        else {            
+            await appContext.setUserRole(role);
+            navigation.navigate('Login');
+        }
+    }
+
     return (
     <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
         <View className="flex-1 flex justify-end">
@@ -18,14 +37,14 @@ export default function WelcomeScreen() {
 
                 <View className="mb-20 mt-20 space-y-4">
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
-                    onPress={()=> navigation.navigate('Login')}>
+                    onPress={()=> handleAction("Manufacturer")}>
                     <Text className= "font-3xl text-white font-bold text-center">
                         Manufacturer
                     </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl"
-                    onPress={()=> navigation.navigate('Login')}>
+                    onPress={()=> handleAction("Seller")}>
                     <Text className= "font-3xl text-white font-bold text-center">
                         Seller
                     </Text>
@@ -33,15 +52,13 @@ export default function WelcomeScreen() {
 
                 <TouchableOpacity className="py-4 bg-gray-900 rounded-xl">
                     <Text className= "font-3xl text-white font-extrabold text-center"
-                    onPress={()=> navigation.navigate('Core', {screen: 'Check'})}>
+                    onPress={()=> handleAction("User")}>
                         User
                     </Text>
                 </TouchableOpacity>
                 </View>
-
             </View>
             </View>
-            
         </View>
       <StatusBar style="auto" /> 
     </ImageBackground>

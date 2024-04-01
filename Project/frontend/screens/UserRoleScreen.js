@@ -39,7 +39,7 @@ export default function UserRoleScreen() {
         <View className="flex-1 justify-start">
             <TouchableOpacity
                 className="p-3 ml-4 mt-8"
-                onPress={()=> navigation.navigate('Login')}>
+                onPress={()=> navigation.navigate('Auth',{screen: 'Login'})}>
                 <ArrowLeftIcon size="30" color="white" />
             </TouchableOpacity>
         </View>

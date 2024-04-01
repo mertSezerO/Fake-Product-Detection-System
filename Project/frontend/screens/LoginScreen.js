@@ -34,7 +34,12 @@ const LoginScreen = () => {
             const responseData = await response.json();
             appContext.setUserToken(responseData.token);
             //check timestamp of token
-            navigation.navigate('Core', {screen: 'UserRole'});
+            if(appContext.userRole === "Manufacturer") {
+                navigation.navigate('Core', {screen: 'UserRole'});
+            }
+            else {
+                navigation.navigate('Core', {screen: 'Check'});
+            }
         } 
         catch (error) {
             console.log(error);
