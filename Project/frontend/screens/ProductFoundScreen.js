@@ -1,21 +1,32 @@
 import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput, ScrollView } from "react-native";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useState } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
+import { CoreContext } from '../contexts/CoreContext';
+
 const ProductFoundScreen = () => {
-    const [productName, setProductName] = useState([
-        { productName: 'Vitamin', key: "1"}
-    ]);
-
-    const [productStatus, setProductStatus] = useState([
-        { productStatus: 'Good', key: "1"}
-    ]);
-
     const navigation = useNavigation();
+    const coreContext = useContext(CoreContext);
+
+    useEffect(() => {
+        const gatherProduct = async () => {
+            const response = await fetch("http://192.168.41.60:3000/product/" + coreContext.foundProductId.current, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            const {product} = await response.json();
+            coreContext.setFoundProduct(product);
+        }
+
+        gatherProduct();
+    }, [])
+
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
         <View className="flex-1 justify-start">
@@ -34,12 +45,10 @@ const ProductFoundScreen = () => {
                 </Text>
 
             <View>
-            { productName.map((item, index) => (
-                <View className="bg-gray-200 mb-10 p-5 rounded-full" key={item.key}>
-                    <Text className="font-bold text-lg">{item.productName}</Text>
-                    <Text>Product Status: {productStatus[index].productStatus}</Text>
+                <View className="bg-gray-200 mb-10 p-5 rounded-full">
+                    <Text className="font-bold text-lg">{coreContext.foundProduct.name}</Text>
+                    <Text>Product Status: {coreContext.foundProduct.status}</Text>
                 </View>
-            ))}
             </View>
 
 

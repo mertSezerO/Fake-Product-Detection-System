@@ -13,3 +13,53 @@
 {"level":"info","message":"All products returned","timestamp":"2024-03-30T17:02:45.089Z"}
 {"level":"info","message":"All products returned","timestamp":"2024-03-30T18:06:03.985Z"}
 {"level":"info","message":"All products returned","timestamp":"2024-03-30T18:06:11.255Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-01T13:54:58.990Z"}
+{"level":"info","message":"New transaction for product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transaction: {\"receiver\":\"0xb1398fb4a3D424a64E0ed8D8860F4c0389363a42\",\"sender\":\"0xFF983A06271EAacE62AFc4b5D13803308E304a0a\"}","timestamp":"2024-04-01T14:21:31.351Z"}
+{"level":"info","message":"New transaction for product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transaction: {\"receiver\":\"0x7d44Df802304F3D7C35052b6d45C078DcA95972f\",\"sender\":\"0xb1398fb4a3D424a64E0ed8D8860F4c0389363a42\"}","timestamp":"2024-04-01T14:21:46.458Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:21:56.720Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:23:15.840Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:25:03.250Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:25:41.235Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:29.569Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:29.669Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:29.757Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:29.875Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.000Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.070Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.152Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.221Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.309Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.381Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.461Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.576Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.677Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.763Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.880Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:30.993Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.072Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.156Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.239Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.320Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.398Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.486Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.571Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.688Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.764Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.869Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:31.952Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:27:57.170Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:28:15.730Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:28:18.264Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:31:21.917Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:31:23.386Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:31:31.654Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:37:18.423Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:37:20.266Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:37:25.193Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x40876b7bc4b6804070dff0c45822fd87, transactions:[object Object],[object Object]","timestamp":"2024-04-01T14:37:26.437Z"}
+{"level":"info","message":"New product added with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11","timestamp":"2024-04-01T14:37:53.658Z"}
+{"level":"info","message":"New transaction for product with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, transaction: {\"receiver\":\"0x7d44Df802304F3D7C35052b6d45C078DcA95972f\",\"sender\":\"0xFF983A06271EAacE62AFc4b5D13803308E304a0a\"}","timestamp":"2024-04-01T14:38:04.806Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:38:59.616Z"}
+{"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:39:21.228Z"}
+{"level":"info","message":"Product Found with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, name: Magnezinc, status: Çöp","timestamp":"2024-04-01T14:39:54.630Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, transactions:[object Object]","timestamp":"2024-04-01T14:39:56.015Z"}

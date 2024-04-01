@@ -12,7 +12,7 @@ const AddProductScreen = () => {
     const [productName, setProductName] = useState("")
     const [productStatus, setProductStatus] = useState("")
     const navigation = useNavigation()
-    const productContext = useContext(CoreContext)
+    const coreContext = useContext(CoreContext)
 
     const handleAddProduct = async () => {
         try {
@@ -38,9 +38,9 @@ const AddProductScreen = () => {
             productName: productName,
             productStatus: productStatus
           };
-          const newProducts = [...productContext.products, newProduct];
+          const newProducts = [...coreContext.products, newProduct];
           
-          await productContext.setProducts(newProducts);
+          await coreContext.setProducts(newProducts);
           // show all products sayfası
           // navigate("/products");   
         } catch (error) {

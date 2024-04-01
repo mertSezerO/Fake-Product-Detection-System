@@ -9,7 +9,7 @@ import { CoreContext } from '../contexts/CoreContext';
 
 export default function UserRoleScreen() {
     const navigation = useNavigation();
-    const productContext = useContext(CoreContext);
+    const coreContext = useContext(CoreContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,7 +26,7 @@ export default function UserRoleScreen() {
                 }
     
                 const { products } = await response.json();
-                await productContext.setProducts(products);
+                await coreContext.setProducts(products);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }

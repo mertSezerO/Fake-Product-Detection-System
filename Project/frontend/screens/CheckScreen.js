@@ -7,15 +7,18 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
 
+import {CoreContext} from '../contexts/CoreContext';
+
 const CheckScreen = () => {
   const navigation = useNavigation();
+  const coreContext = useContext(CoreContext);
 
   return (
     <ImageBackground

@@ -11,7 +11,7 @@ import { CoreContext } from '../contexts/CoreContext';
 const ShowProductScreen = () => {
     const navigation = useNavigation();
 
-    const productContext = useContext(CoreContext);
+    const coreContext = useContext(CoreContext);
     
     return (
         <ImageBackground className="flex-1" source={require('../assets/images/bg.png')}>
@@ -30,10 +30,10 @@ const ShowProductScreen = () => {
                 </Text>
             
         <ScrollView>
-            { productContext.products.map((item, index) => (
+            { coreContext.products.map((item, index) => (
                 <View className="bg-gray-200 mb-10 p-5 rounded-full" key={index}>
                     <Text className="font-bold text-lg">{item.productName}</Text>
-                    <Text>Product Status: {productContext.products[index].productStatus}</Text>
+                    <Text>Product Status: {coreContext.products[index].productStatus}</Text>
                 </View>
             ))}
         </ScrollView>

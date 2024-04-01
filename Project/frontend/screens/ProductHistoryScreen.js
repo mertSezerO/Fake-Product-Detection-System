@@ -4,21 +4,19 @@ import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState, useContext } from "react";
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 import { CoreContext } from '../contexts/CoreContext';
 
 const ProductHistoryScreen = () => {
-    const route = useRoute();
-    const { productId } = route.params;
     const navigation = useNavigation();
-    const productContext = useContext(CoreContext);
+    const coreContext = useContext(CoreContext);
     const [productHistory, setProductHistory] = useState([]); 
 
     useEffect(() => {
         const gatherHistory = async () => {
             try {
-                const response = await fetch("http://192.168.41.60:3000/supply-chain/" + productId, {
+                const response = await fetch("http://192.168.41.60:3000/supply-chain/" + coreContext.foundProductId.current, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -63,7 +61,7 @@ const ProductHistoryScreen = () => {
                     <Text>Date:</Text>
                     <Text>Source: {item.sender}</Text>
                     <Text>Destination: {item.receiver}</Text>
-                    <Text>Condition: {productContext.products[productId].productStatus}</Text>
+                    <Text>Condition: {coreContext.foundProduct.status}</Text>
                     </View>
                 </View>
             ))}
