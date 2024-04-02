@@ -7,18 +7,31 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
-
-import {CoreContext} from '../contexts/CoreContext';
+import { QRCodeScanner } from "react-native-qrcode-scanner";
+import { CoreContext } from "../contexts/CoreContext";
 
 const CheckScreen = () => {
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
+
+  onSuccess = async (e) => {
+    const response = await fetch(
+      "http://192.168.41.60:3000/product/" + e.data,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const { product } = await response.json();
+    coreContext.setFoundProduct(product);
+  };
 
   return (
     <ImageBackground
@@ -42,24 +55,11 @@ const CheckScreen = () => {
             Authenticity Check
           </Text>
           <View className="form space-y-2">
-            <View className="mb-20 mt-20 space-y-4">
-              <TouchableOpacity
-                className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => navigation.navigate("ProductFound")}
-              >
-                <Text className="font-3xl text-white font-extrabold text-center">
-                  Product Found
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => navigation.navigate("Counterfeit")}
-              >
-                <Text className="font-3xl text-white font-extrabold text-center">
-                  Product Counterfeit
-                </Text>
-              </TouchableOpacity>
-            </View>
+            <QRCodeScanner
+              onRead={onSuccess}
+              flashMode={RNCamera.Constants.FlashMode.torch}
+            ></QRCodeScanner>
+            <View className="mb-20 mt-20 space-y-4"></View>
           </View>
         </View>
       </View>
