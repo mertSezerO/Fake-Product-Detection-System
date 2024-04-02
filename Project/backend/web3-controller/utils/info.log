@@ -63,3 +63,24 @@
 {"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-01T14:39:21.228Z"}
 {"level":"info","message":"Product Found with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, name: Magnezinc, status: Çöp","timestamp":"2024-04-01T14:39:54.630Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, transactions:[object Object]","timestamp":"2024-04-01T14:39:56.015Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:04:10.548Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:04:23.662Z"}
+{"level":"info","message":"Product Found with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, name: Magnezinc, status: Çöp","timestamp":"2024-04-02T09:04:37.614Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x26c2c03c9702b54cb9f6691c3ca28c11, transactions:[object Object]","timestamp":"2024-04-02T09:05:12.517Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:34:23.358Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:34:36.631Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:36:46.565Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:37:41.726Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:38:16.768Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:38:57.743Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:40:01.643Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:42:34.030Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:43:15.829Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:43:25.690Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:44:16.907Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:44:31.684Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:44:57.074Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:45:55.007Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:47:55.062Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:48:02.622Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-04-02T09:50:39.896Z"}

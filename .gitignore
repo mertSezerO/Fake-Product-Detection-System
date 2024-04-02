@@ -1,5 +1,6 @@
 # Directories
 node_modules/
+myenv/
 
 # Files
 Docs/*.png
