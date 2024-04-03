@@ -11,7 +11,6 @@ export default function CoreProvider({ children }) {
     setProducts,
     foundProduct,
     setFoundProduct,
-    foundProductId,
   };
 
   return <CoreContext.Provider value={state}>{children}</CoreContext.Provider>;

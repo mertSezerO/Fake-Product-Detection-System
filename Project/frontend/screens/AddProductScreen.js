@@ -3,7 +3,7 @@ import React from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from 'expo-status-bar';
 import { useState, useContext } from "react";
-import {ArrowLeftIcon} from 'react-native-heroicons/solid';
+import { ArrowLeftIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from "@react-navigation/native";
 
 import { CoreContext } from '../contexts/CoreContext';
