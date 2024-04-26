@@ -1,5 +1,5 @@
 import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from "expo-status-bar";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
@@ -32,40 +32,28 @@ const CheckScreen = () => {
         },
       }
     );
+
+    if (response.status !== response.ok) {
+      navigation.navigate("Counterfeit");
+      return;
+    }
     const { product } = await response.json();
+    console.log(product);
     coreContext.setFoundProduct(product);
+    navigation.navigate("ProductFound");
+    scanned.current = false;
   };
 
   return (
-    <ImageBackground
-      className="flex-1"
-      source={require("../assets/images/bg.png")}>
-      <View className="flex-1 justify-start">
-        <TouchableOpacity
-          className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Welcome")}>
-          <ArrowLeftIcon size="30" color="white" />
-        </TouchableOpacity>
-      </View>
-      <View className="flex-1 flex justify-end">
-        <View
-          className="flex-2/3 bg-white px-10 pt-10"
-          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
-          <Text className="text-gray font-bold text-4xl text-center">
-            Authenticity Check
-          </Text>
-          <View className="form space-y-2">
-            <Camera
-              ref={(ref) => setCameraRef(ref)}
-              className="flex-1"
-              type={Camera.Constants.Type.back}
-            />
-            <View className="mb-20 mt-20 space-y-4"></View>
-          </View>
-        </View>
-      </View>
-      <StatusBar style="auto" />
-    </ImageBackground>
+    <View className=" items-center">
+      <Camera
+        ref={(ref) => setCameraRef(ref)}
+        className="flex justify-center"
+        style={{ width: 200, height: 200 }}
+        type={Camera.Constants.Type.back}
+        onBarCodeScanned={onScan}
+      />
+    </View>
   );
 };
 export default CheckScreen;
