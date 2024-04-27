@@ -1,13 +1,18 @@
-const Router = require('express').Router();
+const Router = require("express").Router()
 
-const productController = require('../controllers/product');
+const productController = require("../controllers/product")
+const middlewareController = require("../controllers/middleware")
 
-Router.post('/product', productController.addProduct);
+Router.post("/product", productController.addProduct)
 
-Router.get('/product', productController.getProducts);
+Router.get("/product", productController.getProducts)
 
-Router.patch('/product/:productId', productController.updateProductStatus);
+Router.patch("/product/:productId", productController.updateProductStatus)
 
-Router.get('/product/:productId', productController.findProduct);
+Router.get(
+  "/product/:productId",
+  middlewareController.deduplicate,
+  productController.findProduct
+)
 
-module.exports = Router;
+module.exports = Router
