@@ -10,7 +10,7 @@ import { Camera } from "expo-camera"
 const CheckScreen = () => {
   const navigation = useNavigation()
   const coreContext = useContext(CoreContext)
-
+  const scanned = useRef(false)
   const [cameraRef, setCameraRef] = useState(null)
 
   useEffect(() => {
@@ -33,13 +33,16 @@ const CheckScreen = () => {
       }
     )
 
-    if (response.status !== 200) {
-      navigation.navigate("Counterfeit")
-      return
+    if (!scanned.current) {
+      scanned.current = true
+      if (response.status !== 200) {
+        navigation.navigate("Counterfeit")
+        return
+      }
+      const { product } = await response.json()
+      coreContext.setFoundProduct(product)
+      navigation.navigate("ProductFound")
     }
-    const { product } = await response.json()
-    coreContext.setFoundProduct(product)
-    navigation.navigate("ProductFound")
   }
 
   return (

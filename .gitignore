@@ -5,4 +5,4 @@ myenv/
 # Files
 Docs/*.png
 .env
-*.json
+*.log
