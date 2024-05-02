@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  SafeAreaView,
   ImageBackground,
   TouchableOpacity,
   TextInput,
@@ -9,42 +8,20 @@ import {
 import React from "react";
 import tailwindConfig from "../tailwind.config";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
 
-const RegisterScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+import { CoreContext } from "../contexts/CoreContext";
+
+const CreateTransactionScreen = () => {
+  const [productName, setProductName] = useState("");
+  const [destination, setDestination] = useState("");
+  const [productCondition, setProductCondition] = useState("");
+
+  //const [productStatus, setProductStatus] = useState("");
   const navigation = useNavigation();
-
-  const handleRegister = async () => {
-    try {
-      if (password === confirmPassword) {
-        const response = await fetch("http://192.168.68.55:3001/users", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        });
-
-        if (response.status !== 201) {
-          throw Error(response.message);
-        }
-
-        navigation.navigate("Login");
-      } else {
-        throw Error("Passwords are not the same");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const coreContext = useContext(CoreContext);
 
   return (
     <ImageBackground
@@ -54,7 +31,7 @@ const RegisterScreen = () => {
       <View className="flex-1 justify-start">
         <TouchableOpacity
           className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Core", { screen: "Welcome" })}
+          onPress={() => navigation.navigate("Admin")}
         >
           <ArrowLeftIcon size="30" color="white" />
         </TouchableOpacity>
@@ -65,48 +42,37 @@ const RegisterScreen = () => {
           style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
         >
           <Text className="text-gray font-bold text-4xl text-center">
-            Register
+            {coreContext.selectedProduct.productName}
           </Text>
+
           <View className="form space-y-2">
             <View className="mb-10 mt-10">
               <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Email Adress
+                Destination
               </Text>
               <TextInput
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
-                placeholder="Enter Email"
-                value={email}
-                onChangeText={(text) => setEmail(text)}
+                placeholder="Enter Destination Address"
+                value={destination}
+                //onChangeText={(text) => setDestination(text)}
               ></TextInput>
               <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Password
-              </Text>
-              <TextInput
-                className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
-                secureTextEntry
-                placeholder="Enter Password"
-                value={password}
-                onChangeText={(text) => setPassword(text)}
-              ></TextInput>
-
-              <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Confirm Password
+                Condition
               </Text>
               <TextInput
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                secureTextEntry
-                placeholder="Enter Password"
-                value={confirmPassword}
-                onChangeText={(text) => setConfirmPassword(text)}
+                placeholder="Enter Product Condition"
+                value={productCondition}
+                //onChangeText={(text) => setProductCondition(text)}
               ></TextInput>
             </View>
             <View className="mb-20 mt-20 space-y-4">
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => handleRegister()}
+                //onPress={handleTransaction}
               >
                 <Text className="font-3xl text-white font-extrabold text-center">
-                  Register
+                  Create Transaction
                 </Text>
               </TouchableOpacity>
             </View>
@@ -117,4 +83,4 @@ const RegisterScreen = () => {
     </ImageBackground>
   );
 };
-export default RegisterScreen;
+export default CreateTransactionScreen;

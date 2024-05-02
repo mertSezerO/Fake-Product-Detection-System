@@ -16,10 +16,15 @@ import { useNavigation } from "@react-navigation/native";
 
 import { CoreContext } from "../contexts/CoreContext";
 
-const ShowProductScreen = () => {
+const ProductTransactionScreen = () => {
   const navigation = useNavigation();
 
   const coreContext = useContext(CoreContext);
+
+  initializeTransaction = async (product) => {
+    coreContext.setSelectedProduct(product);
+    navigation.navigate("CreateTransaction");
+  };
 
   return (
     <ImageBackground
@@ -45,11 +50,31 @@ const ShowProductScreen = () => {
 
           <ScrollView>
             {coreContext.products.map((item, index) => (
-              <View className="bg-gray-200 mb-10 p-5 rounded-full" key={index}>
-                <Text className="font-bold text-lg">{item.productName}</Text>
-                <Text>
-                  Product Status: {coreContext.products[index].productStatus}
-                </Text>
+              <View
+                className="flex-row bg-gray-200 mb-10 p-5 rounded-full"
+                key={index}
+              >
+                <View>
+                  <Text className="font-bold text-lg">{item.productName}</Text>
+
+                  <Text>
+                    Product Status: {coreContext.products[index].productStatus}
+                  </Text>
+                </View>
+
+                <View>
+                  <TouchableOpacity
+                    className="py-4 bg-gray-800 rounded-xl"
+                    style={{ width: 70 }}
+                    onPress={() =>
+                      initializeTransaction(coreContext.products[index])
+                    }
+                  >
+                    <Text className="font-3xl text-white font-bold text-center">
+                      Send
+                    </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             ))}
           </ScrollView>
@@ -59,4 +84,4 @@ const ShowProductScreen = () => {
     </ImageBackground>
   );
 };
-export default ShowProductScreen;
+export default ProductTransactionScreen;
