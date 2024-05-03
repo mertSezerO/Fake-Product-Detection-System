@@ -51,3 +51,10 @@
 {"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-27T17:50:33.549Z"}
 {"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-27T17:50:34.617Z"}
 {"level":"info","message":"Product Found with ID: 0x40876b7bc4b6804070dff0c45822fd87, name: Aspirin, status: Coki","timestamp":"2024-04-27T17:52:15.086Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T16:28:16.625Z"}
+{"level":"info","message":"New product added with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830","timestamp":"2024-05-03T16:28:43.833Z"}
+{"level":"info","message":"New transaction for product with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, transaction: {\"receiver\":\"0x7d44Df802304F3D7C35052b6d45C078DcA95972f\",\"sender\":\"0xFF983A06271EAacE62AFc4b5D13803308E304a0a\"}","timestamp":"2024-05-03T16:31:09.481Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T16:32:45.888Z"}
+{"level":"info","message":"Product Found with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, name: Magnezinc, status: Çöp","timestamp":"2024-05-03T16:32:52.763Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, transactions:[object Object]","timestamp":"2024-05-03T16:32:55.271Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, transactions:[object Object]","timestamp":"2024-05-03T16:38:44.312Z"}
