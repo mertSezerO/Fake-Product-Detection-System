@@ -1,3 +1,5 @@
+const jwt_decode = require("jwt-decode")
+
 require("dotenv").config()
 
 const cache = {}
@@ -16,5 +18,16 @@ exports.deduplicate = async (req, res, next) => {
   } else {
     cache[value] = Date.now()
     next()
+  }
+}
+
+exports.decodeToken = (req, res, next) => {
+  const token = req.get("Authorization").split(" ")[1]
+  try {
+    const decodedToken = jwt_decode(token)
+    req.token = decodedToken
+    next()
+  } catch (err) {
+    console.log("Token is invalid.")
   }
 }
