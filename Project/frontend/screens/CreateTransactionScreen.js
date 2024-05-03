@@ -16,45 +16,39 @@ import { useNavigation } from "@react-navigation/native";
 
 import { CoreContext } from "../contexts/CoreContext";
 
-const AddProductScreen = () => {
-  const [productName, setProductName] = useState("");
-  const [productStatus, setProductStatus] = useState("");
+const CreateTransactionScreen = () => {
+  //const [productName, setProductName] = useState("");
+  const [receiver, setReceiver] = useState("");
+  const [productCondition, setProductCondition] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
 
-  const handleAddProduct = async () => {
+  const handleTransaction = async () => {
+    const { productId } = coreContext.selectedProduct.productId;
     try {
-      const response = await fetch("http://10.123.22.218:3000/product", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productName: productName,
-          productStatus: productStatus,
-        }),
-      });
+      const response = await fetch(
+        "http://10.123.22.218:3000/supply-chain/" + productId,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            receiver: receiver,
+            productCondition: productCondition,
+          }),
+        }
+      );
 
       if (response.status !== 201) {
         throw new Error("HTTP error, status = " + response.status);
       }
 
-      const { productId } = await response.json();
-
-      const newProduct = {
-        productId: productId,
-        productName: productName,
-        productStatus: productStatus,
-      };
-      const newProducts = [...coreContext.products, newProduct];
-
-      await coreContext.setProducts(newProducts);
-      // show all products sayfası
-      // navigate("/products");
       setModalVisible(true);
     } catch (error) {
-      console.error("Product addition error:", error);
+      console.error("Create Transaction error:", error.message);
     }
   };
 
@@ -77,36 +71,37 @@ const AddProductScreen = () => {
           style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
         >
           <Text className="text-gray font-bold text-4xl text-center">
-            Add New Product
+            {coreContext.selectedProduct.productName}
           </Text>
+
           <View className="form space-y-2">
             <View className="mb-10 mt-10">
               <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Product Name
+                Destination
               </Text>
               <TextInput
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
-                placeholder="Enter Product Name"
-                value={productName}
-                onChangeText={(text) => setProductName(text)}
+                placeholder="Enter Destination Address"
+                value={receiver}
+                onChangeText={(text) => setReceiver(text)}
               ></TextInput>
               <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Product Status
+                Condition
               </Text>
               <TextInput
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                placeholder="Enter Product Status"
-                value={productStatus}
-                onChangeText={(text) => setProductStatus(text)}
+                placeholder="Enter Product Condition"
+                value={productCondition}
+                onChangeText={(text) => setProductCondition(text)}
               ></TextInput>
             </View>
             <View className="mb-20 mt-20 space-y-4">
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                onPress={handleAddProduct}
+                onPress={handleTransaction}
               >
                 <Text className="font-3xl text-white font-extrabold text-center">
-                  Add Product
+                  Create Transaction
                 </Text>
               </TouchableOpacity>
               <Modal
@@ -137,7 +132,7 @@ const AddProductScreen = () => {
                         marginBottom: 10,
                       }}
                     >
-                      Product added successfully
+                      Transaction crated successfully
                     </Text>
                     <Button
                       title="Close"
@@ -154,4 +149,4 @@ const AddProductScreen = () => {
     </ImageBackground>
   );
 };
-export default AddProductScreen;
+export default CreateTransactionScreen;

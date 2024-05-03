@@ -20,13 +20,14 @@ import { CoreContext } from "../contexts/CoreContext";
 const ProductHistoryScreen = () => {
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
+  const [productName, setProductName] = useState([]);
   const [productHistory, setProductHistory] = useState([]);
 
   useEffect(() => {
     const gatherHistory = async () => {
       try {
         const response = await fetch(
-          "http://192.168.41.60:3000/supply-chain/" +
+          "http://10.123.22.218:3000/supply-chain/" +
             coreContext.foundProduct.productId,
           {
             method: "GET",

@@ -23,7 +23,7 @@ const LoginScreen = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://192.168.41.60:3001/login", {
+      const response = await fetch("http://10.123.22.218:3001/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const LoginScreen = () => {
       appContext.setUserToken(responseData.token);
       //check timestamp of token
       if (appContext.userRole === "Manufacturer") {
-        navigation.navigate("Core", { screen: "UserRole" });
+        navigation.navigate("Core", { screen: "Admin" });
       } else {
         navigation.navigate("Core", { screen: "Check" });
       }
@@ -56,18 +56,21 @@ const LoginScreen = () => {
   return (
     <ImageBackground
       className="flex-1"
-      source={require("../assets/images/bg.png")}>
+      source={require("../assets/images/bg.png")}
+    >
       <View className="flex-1 justify-start">
         <TouchableOpacity
           className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Welcome")}>
+          onPress={() => navigation.navigate("Welcome")}
+        >
           <ArrowLeftIcon size="30" color="white" />
         </TouchableOpacity>
       </View>
       <View className="flex-1 flex justify-end">
         <View
           className="flex-2/3 bg-white px-10 pt-10"
-          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
+        >
           <Text className="text-gray font-bold text-4xl text-center">
             Login
           </Text>
@@ -80,7 +83,8 @@ const LoginScreen = () => {
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
                 placeholder="Enter Email"
                 value={email}
-                onChangeText={(text) => setEmail(text)}></TextInput>
+                onChangeText={(text) => setEmail(text)}
+              ></TextInput>
               <Text className="text-gray-700 font-bold mb-1 ml-4">
                 Password
               </Text>
@@ -89,19 +93,22 @@ const LoginScreen = () => {
                 secureTextEntry
                 placeholder="Enter Password"
                 value={password}
-                onChangeText={(text) => setPassword(text)}></TextInput>
+                onChangeText={(text) => setPassword(text)}
+              ></TextInput>
             </View>
             <View className="mb-20 mt-20 space-y-4">
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => handleLogin()}>
+                onPress={() => handleLogin()}
+              >
                 <Text className="font-3xl text-white font-extrabold text-center">
                   Login
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
                 className="flex items-center mb-2"
-                onPress={() => navigation.navigate("Register")}>
+                onPress={() => navigation.navigate("Register")}
+              >
                 <Text className="text-gray-700 text-center font-bold underline">
                   Don't you have an account?
                 </Text>

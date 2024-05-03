@@ -44,11 +44,13 @@ export default function WelcomeScreen() {
   return (
     <ImageBackground
       className="flex-1"
-      source={require("../assets/images/bg.png")}>
+      source={require("../assets/images/bg.png")}
+    >
       <View className="flex-1 flex justify-end">
         <View
           className="flex-2/3 bg-white px-10 pt-10"
-          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
+        >
           <View className="flex-col mt-10 justify-around">
             <Text className="text-gray font-bold text-5xl text-center">
               Welcome!
@@ -57,7 +59,8 @@ export default function WelcomeScreen() {
             <View className="mb-20 mt-20 space-y-4">
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => handleAction("Manufacturer")}>
+                onPress={() => handleAction("Manufacturer")}
+              >
                 <Text className="font-3xl text-white font-bold text-center">
                   Manufacturer
                 </Text>
@@ -65,7 +68,8 @@ export default function WelcomeScreen() {
 
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => handleAction("Seller")}>
+                onPress={() => handleAction("Seller")}
+              >
                 <Text className="font-3xl text-white font-bold text-center">
                   Seller
                 </Text>
@@ -74,7 +78,8 @@ export default function WelcomeScreen() {
               <TouchableOpacity className="py-4 bg-gray-900 rounded-xl">
                 <Text
                   className="font-3xl text-white font-extrabold text-center"
-                  onPress={() => handleAction("User")}>
+                  onPress={() => handleAction("User")}
+                >
                   User
                 </Text>
               </TouchableOpacity>
