@@ -24,7 +24,7 @@ const CheckScreen = () => {
 
   onScan = async (e) => {
     const response = await fetch(
-      "http://10.123.22.218:3000/product/" + e.data,
+      "http://192.168.41.60:3000/product/" + e.data,
       {
         method: "GET",
         headers: {

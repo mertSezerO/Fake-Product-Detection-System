@@ -5,25 +5,25 @@ import {
   ImageBackground,
   TouchableOpacity,
   TextInput,
-} from "react-native";
-import React, { useContext } from "react";
-import tailwindConfig from "../tailwind.config";
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { ArrowLeftIcon } from "react-native-heroicons/solid";
-import { useNavigation } from "@react-navigation/native";
+} from "react-native"
+import React, { useContext } from "react"
+import tailwindConfig from "../tailwind.config"
+import { StatusBar } from "expo-status-bar"
+import { useState } from "react"
+import { ArrowLeftIcon } from "react-native-heroicons/solid"
+import { useNavigation } from "@react-navigation/native"
 
-import { AppContext } from "../contexts/AppContext";
+import { AppContext } from "../contexts/AppContext"
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const appContext = useContext(AppContext);
-  const navigation = useNavigation();
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const appContext = useContext(AppContext)
+  const navigation = useNavigation()
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://10.123.22.218:3001/login", {
+      const response = await fetch("http://192.168.41.60:3001/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,45 +32,40 @@ const LoginScreen = () => {
           email: email,
           password: password,
         }),
-      });
-
-      console.log(appContext.networkIP);
+      })
 
       if (response.status !== 201) {
-        throw Error(response.message);
+        throw Error(response.message)
       }
 
-      const responseData = await response.json();
-      appContext.setUserToken(responseData.token);
+      const responseData = await response.json()
+      appContext.setUserToken(responseData.token)
       //check timestamp of token
       if (appContext.userRole === "Manufacturer") {
-        navigation.navigate("Core", { screen: "Admin" });
+        navigation.navigate("Core", { screen: "Admin" })
       } else {
-        navigation.navigate("Core", { screen: "Check" });
+        navigation.navigate("Core", { screen: "Check" })
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
   return (
     <ImageBackground
       className="flex-1"
-      source={require("../assets/images/bg.png")}
-    >
+      source={require("../assets/images/bg.png")}>
       <View className="flex-1 justify-start">
         <TouchableOpacity
           className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Welcome")}
-        >
+          onPress={() => navigation.navigate("Welcome")}>
           <ArrowLeftIcon size="30" color="white" />
         </TouchableOpacity>
       </View>
       <View className="flex-1 flex justify-end">
         <View
           className="flex-2/3 bg-white px-10 pt-10"
-          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
-        >
+          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
           <Text className="text-gray font-bold text-4xl text-center">
             Login
           </Text>
@@ -83,8 +78,7 @@ const LoginScreen = () => {
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
                 placeholder="Enter Email"
                 value={email}
-                onChangeText={(text) => setEmail(text)}
-              ></TextInput>
+                onChangeText={(text) => setEmail(text)}></TextInput>
               <Text className="text-gray-700 font-bold mb-1 ml-4">
                 Password
               </Text>
@@ -93,22 +87,19 @@ const LoginScreen = () => {
                 secureTextEntry
                 placeholder="Enter Password"
                 value={password}
-                onChangeText={(text) => setPassword(text)}
-              ></TextInput>
+                onChangeText={(text) => setPassword(text)}></TextInput>
             </View>
             <View className="mb-20 mt-20 space-y-4">
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                onPress={() => handleLogin()}
-              >
+                onPress={() => handleLogin()}>
                 <Text className="font-3xl text-white font-extrabold text-center">
                   Login
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
                 className="flex items-center mb-2"
-                onPress={() => navigation.navigate("Register")}
-              >
+                onPress={() => navigation.navigate("Register")}>
                 <Text className="text-gray-700 text-center font-bold underline">
                   Don't you have an account?
                 </Text>
@@ -119,6 +110,6 @@ const LoginScreen = () => {
       </View>
       <StatusBar style="auto" />
     </ImageBackground>
-  );
-};
-export default LoginScreen;
+  )
+}
+export default LoginScreen

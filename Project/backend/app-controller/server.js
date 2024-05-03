@@ -1,32 +1,32 @@
-const express = require('express');
-const app  = express();
+const express = require("express")
+const app = express()
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose")
 
-const cors = require('cors');
+const cors = require("cors")
 const CORS = cors({
-  origin:"*"
+  origin: "*",
 })
 
-require('dotenv').config();
+require("dotenv").config()
 
-app.use(CORS);
-app.use(express.json());
+app.use(CORS)
+app.use(express.json())
 
-const userRouter = require('./routes/user');
+const userRouter = require("./routes/user")
 
-app.use(userRouter);
+app.use(userRouter)
 
 mongoose
   .connect(process.env.DATABASE_URI)
   .then(() => {
-    console.log("CONNECTED TO MONGODB");
+    console.log("CONNECTED TO MONGODB")
   })
   .then(() => {
     app.listen(process.env.PORT, () => {
-      console.log("Listening on Port: " + process.env.PORT);
-    });
+      console.log("Listening on Port: " + process.env.PORT)
+    })
   })
   .catch((err) => {
-    console.log(err);
-  });
+    console.log(err)
+  })
