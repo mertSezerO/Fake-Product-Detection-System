@@ -21,7 +21,7 @@ export default function AdminScreen() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://192.168.68.55:3000/product", {
+        const response = await fetch("http://10.123.22.218:3000/product", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

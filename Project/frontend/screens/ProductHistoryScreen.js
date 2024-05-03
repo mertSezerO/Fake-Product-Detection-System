@@ -27,7 +27,7 @@ const ProductHistoryScreen = () => {
     const gatherHistory = async () => {
       try {
         const response = await fetch(
-          "http://192.168.68.55:3000/supply-chain/" +
+          "http://10.123.22.218:3000/supply-chain/" +
             coreContext.foundProduct.productId,
           {
             method: "GET",

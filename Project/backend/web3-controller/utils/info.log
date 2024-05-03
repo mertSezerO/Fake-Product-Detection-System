@@ -66,3 +66,26 @@
 {"level":"info","message":"All products returned","timestamp":"2024-05-02T18:49:16.723Z"}
 {"level":"info","message":"All products returned","timestamp":"2024-05-02T18:54:12.238Z"}
 {"level":"info","message":"All products returned","timestamp":"2024-05-02T18:55:42.044Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T05:34:08.145Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T05:34:51.677Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T05:44:44.827Z"}
+{"level":"info","message":"New transaction for product with ID: 0xf0df4576159cfe2515861407bb595fa2, transaction: {\"receiver\":\"0x7E3323d7d93500e2130738941E1E9EEd61c3806e\",\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\"}","timestamp":"2024-05-03T05:47:41.956Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T05:56:26.088Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T05:59:01.787Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T05:59:40.249Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf0df4576159cfe2515861407bb595fa2, transactions:[object Object]","timestamp":"2024-05-03T05:59:46.267Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T06:00:28.778Z"}
+{"level":"info","message":"New product added with ID: 0xc2a49a03638fcdbd990ec9afb5aad35c","timestamp":"2024-05-03T06:00:44.690Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:01:08.131Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T06:21:57.761Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:23:11.672Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:23:20.846Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:23:28.681Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf0df4576159cfe2515861407bb595fa2, transactions:[object Object]","timestamp":"2024-05-03T06:23:30.001Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-03T06:23:48.557Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:24:27.926Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:24:37.681Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf0df4576159cfe2515861407bb595fa2, transactions:[object Object]","timestamp":"2024-05-03T06:24:37.722Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf0df4576159cfe2515861407bb595fa2, transactions:[object Object]","timestamp":"2024-05-03T06:24:40.044Z"}
+{"level":"info","message":"Product Found with ID: 0xf0df4576159cfe2515861407bb595fa2, name: Gamze, status: Good","timestamp":"2024-05-03T06:24:42.947Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf0df4576159cfe2515861407bb595fa2, transactions:[object Object]","timestamp":"2024-05-03T06:24:43.990Z"}

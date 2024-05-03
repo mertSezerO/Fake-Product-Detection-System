@@ -4,6 +4,8 @@ import {
   ImageBackground,
   TouchableOpacity,
   TextInput,
+  Button,
+  Modal,
 } from "react-native";
 import React from "react";
 import tailwindConfig from "../tailwind.config";
@@ -15,13 +17,40 @@ import { useNavigation } from "@react-navigation/native";
 import { CoreContext } from "../contexts/CoreContext";
 
 const CreateTransactionScreen = () => {
-  const [productName, setProductName] = useState("");
-  const [destination, setDestination] = useState("");
+  //const [productName, setProductName] = useState("");
+  const [receiver, setReceiver] = useState("");
   const [productCondition, setProductCondition] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
 
-  //const [productStatus, setProductStatus] = useState("");
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
+
+  const handleTransaction = async () => {
+    const { productId } = coreContext.selectedProduct.productId;
+    try {
+      const response = await fetch(
+        "http://10.123.22.218:3000/supply-chain/" + productId,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            receiver: receiver,
+            productCondition: productCondition,
+          }),
+        }
+      );
+
+      if (response.status !== 201) {
+        throw new Error("HTTP error, status = " + response.status);
+      }
+
+      setModalVisible(true);
+    } catch (error) {
+      console.error("Create Transaction error:", error.message);
+    }
+  };
 
   return (
     <ImageBackground
@@ -53,8 +82,8 @@ const CreateTransactionScreen = () => {
               <TextInput
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
                 placeholder="Enter Destination Address"
-                value={destination}
-                //onChangeText={(text) => setDestination(text)}
+                value={receiver}
+                onChangeText={(text) => setReceiver(text)}
               ></TextInput>
               <Text className="text-gray-700 font-bold mb-1 ml-4">
                 Condition
@@ -63,18 +92,55 @@ const CreateTransactionScreen = () => {
                 className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
                 placeholder="Enter Product Condition"
                 value={productCondition}
-                //onChangeText={(text) => setProductCondition(text)}
+                onChangeText={(text) => setProductCondition(text)}
               ></TextInput>
             </View>
             <View className="mb-20 mt-20 space-y-4">
               <TouchableOpacity
                 className="py-4 bg-gray-900 rounded-xl"
-                //onPress={handleTransaction}
+                onPress={handleTransaction}
               >
                 <Text className="font-3xl text-white font-extrabold text-center">
                   Create Transaction
                 </Text>
               </TouchableOpacity>
+              <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(false)}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: "white",
+                      padding: 20,
+                      borderRadius: 8,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 18,
+                        fontWeight: "bold",
+                        marginBottom: 10,
+                      }}
+                    >
+                      Transaction crated successfully
+                    </Text>
+                    <Button
+                      title="Close"
+                      onPress={() => setModalVisible(false)}
+                    />
+                  </View>
+                </View>
+              </Modal>
             </View>
           </View>
         </View>
