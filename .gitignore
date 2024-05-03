@@ -6,3 +6,4 @@ myenv/
 Docs/*.png
 .env
 *.log
+index.txt
