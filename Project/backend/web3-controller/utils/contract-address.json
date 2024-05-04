@@ -1,10 +1,10 @@
 {
   "Types": {
-    "address": "0x9fa299CeE2f5809e0059f007Cca157d2529ED954",
+    "address": "0xba3672c685d08B808c76B95E2ae3a08f0E8D49D2",
     "abi": []
   },
   "ProductAction": {
-    "address": "0x97247717F92e605Af9DE691F2de859117b7A152E",
+    "address": "0xfbBaaeea3d5214f020a0141BB9359dd2e6CEfB4d",
     "abi": [
       {
         "inputs": [],
@@ -29,11 +29,6 @@
               {
                 "internalType": "string",
                 "name": "productName",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "productStatus",
                 "type": "string"
               }
             ],
@@ -60,12 +55,6 @@
             "internalType": "string",
             "name": "productName",
             "type": "string"
-          },
-          {
-            "indexed": false,
-            "internalType": "string",
-            "name": "productStatus",
-            "type": "string"
           }
         ],
         "name": "ProductCreated",
@@ -79,12 +68,6 @@
             "internalType": "bytes16",
             "name": "productId",
             "type": "bytes16"
-          },
-          {
-            "indexed": false,
-            "internalType": "string",
-            "name": "productStatus",
-            "type": "string"
           }
         ],
         "name": "ProductDetailsUpdated",
@@ -103,12 +86,6 @@
             "indexed": false,
             "internalType": "string",
             "name": "productName",
-            "type": "string"
-          },
-          {
-            "indexed": false,
-            "internalType": "string",
-            "name": "productStatus",
             "type": "string"
           }
         ],
@@ -133,11 +110,6 @@
               {
                 "internalType": "string",
                 "name": "productName",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "productStatus",
                 "type": "string"
               }
             ],
@@ -188,11 +160,6 @@
             "internalType": "string",
             "name": "productName",
             "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "productStatus",
-            "type": "string"
           }
         ],
         "stateMutability": "view",
@@ -204,11 +171,6 @@
           {
             "internalType": "string",
             "name": "_productName",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "_productStatus",
             "type": "string"
           }
         ],
@@ -228,32 +190,9 @@
             "internalType": "string",
             "name": "_productName",
             "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "_productStatus",
-            "type": "string"
           }
         ],
         "name": "updateProduct",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "bytes16",
-            "name": "_productId",
-            "type": "bytes16"
-          },
-          {
-            "internalType": "string",
-            "name": "_newDetails",
-            "type": "string"
-          }
-        ],
-        "name": "addProductDetails",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -281,7 +220,7 @@
     ]
   },
   "SupplyChain": {
-    "address": "0x2Cd06D7097087438Ed651F43C3E3Fd22712f194C",
+    "address": "0xF0fcf54B23cD7FC4024F586A673A0E7ddC0B15A3",
     "abi": [
       {
         "inputs": [],
@@ -308,6 +247,11 @@
                 "internalType": "address",
                 "name": "receiver",
                 "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "productStatus",
+                "type": "string"
               }
             ],
             "indexed": false,
@@ -352,6 +296,12 @@
             "internalType": "address",
             "name": "receiver",
             "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "string",
+            "name": "condition",
+            "type": "string"
           }
         ],
         "name": "TransactionCreated",
@@ -415,6 +365,11 @@
             "internalType": "address",
             "name": "receiver",
             "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "productStatus",
+            "type": "string"
           }
         ],
         "stateMutability": "view",
@@ -432,6 +387,11 @@
             "internalType": "address",
             "name": "_receiver",
             "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "_condition",
+            "type": "string"
           }
         ],
         "name": "recordTransaction",

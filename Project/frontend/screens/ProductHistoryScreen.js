@@ -74,7 +74,7 @@ const ProductHistoryScreen = () => {
             <View className="border-l border-gray-500 h-full mr-4">
               {productHistory.map((item, index) => (
                 <View
-                  className="bg-gray-300 mb-10 p-5 rounded-full"
+                  className="bg-gray-300 mb-10 p-5 rounded-full flex-row"
                   key={index}
                 >
                   <Image
@@ -83,10 +83,10 @@ const ProductHistoryScreen = () => {
                     style={{ width: 30, height: 30 }}
                   ></Image>
                   <View>
-                    <Text>Date:</Text>
+                    <Text>Date: </Text>
                     <Text>Source: {item.sender}</Text>
                     <Text>Destination: {item.receiver}</Text>
-                    <Text>Condition: {coreContext.foundProduct.status}</Text>
+                    <Text>Condition: {item.productStatus}</Text>
                   </View>
                 </View>
               ))}

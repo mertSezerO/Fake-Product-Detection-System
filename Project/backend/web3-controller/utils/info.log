@@ -72,3 +72,37 @@
 {"level":"info","message":"New transaction for product with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, transaction: {\"receiver\":\"0x7E3323d7d93500e2130738941E1E9EEd61c3806e\",\"sender\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\"}","timestamp":"2024-05-04T10:24:16.084Z"}
 {"level":"info","message":"Product Found with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, name: Citamin, status: Xood","timestamp":"2024-05-04T10:24:28.962Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, transactions:[object Object],[object Object]","timestamp":"2024-05-04T10:24:31.576Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:47:33.574Z"}
+{"level":"info","message":"New product added with ID: 0xe47427eaa83928b3c43f068b15f3b810","timestamp":"2024-05-04T10:51:13.398Z"}
+{"level":"info","message":"New product added with ID: 0xb8e9b32d80f69750dc39b7262b994274","timestamp":"2024-05-04T10:51:28.054Z"}
+{"level":"info","message":"New product added with ID: 0x73098937abe62be417e4868e2bf899d3","timestamp":"2024-05-04T10:51:42.352Z"}
+{"level":"info","message":"New transaction for product with ID: 0xe47427eaa83928b3c43f068b15f3b810, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\",\"condition\":\"M\"}","timestamp":"2024-05-04T10:52:17.782Z"}
+{"level":"info","message":"New transaction for product with ID: 0xe47427eaa83928b3c43f068b15f3b810, transaction: {\"sender\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\",\"receiver\":\"0x7E3323d7d93500e2130738941E1E9EEd61c3806e\",\"condition\":\"N\"}","timestamp":"2024-05-04T10:52:33.783Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:52:46.036Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:53:30.312Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:54:03.305Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:54:17.319Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:55:49.862Z"}
+{"level":"info","message":"New product added with ID: 0x177ab83af0948ba568bd1a93de2d4006","timestamp":"2024-05-04T10:56:00.203Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:56:36.845Z"}
+{"level":"info","message":"New product added with ID: 0x767ebd24748720535fe3959d030d6ddc","timestamp":"2024-05-04T10:57:17.443Z"}
+{"level":"info","message":"New product added with ID: 0x8ff71b22a511abdc0256d80197f0688c","timestamp":"2024-05-04T10:57:31.967Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:57:53.419Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:58:00.940Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:59:07.240Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T11:00:38.070Z"}
+{"level":"info","message":"New transaction for product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\",\"condition\":\"Ni\"}","timestamp":"2024-05-04T11:01:17.250Z"}
+{"level":"info","message":"New transaction for product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transaction: {\"sender\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\",\"receiver\":\"0x7E3323d7d93500e2130738941E1E9EEd61c3806e\",\"condition\":\"N\"}","timestamp":"2024-05-04T11:01:34.294Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-04T11:01:44.221Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:01:45.886Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-04T11:01:58.239Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-04T11:02:03.267Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:02:06.682Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-04T11:02:08.266Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-04T11:02:13.299Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:04:25.125Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:04:48.088Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:06:06.177Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:06:43.646Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:07:05.132Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:08:32.471Z"}

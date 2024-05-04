@@ -47,7 +47,6 @@ const ProductFoundScreen = () => {
               <Text className="font-bold text-lg">
                 {coreContext.foundProduct.name}
               </Text>
-              <Text>Product Status: {coreContext.foundProduct.status}</Text>
             </View>
           </View>
 
