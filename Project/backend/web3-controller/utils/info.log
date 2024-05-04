@@ -106,3 +106,8 @@
 {"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:06:43.646Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:07:05.132Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-04T11:08:32.471Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T11:42:34.413Z"}
+{"level":"info","message":"New transaction for product with ID: 0x767ebd24748720535fe3959d030d6ddc, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0x6D2F9D2267E8c768E26450BF4922FdA41227D807\",\"condition\":\"Nicee\"}","timestamp":"2024-05-04T11:54:27.814Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T11:54:56.856Z"}
+{"level":"info","message":"Product Found with ID: 0x767ebd24748720535fe3959d030d6ddc, name: Aspirin","timestamp":"2024-05-04T11:55:33.217Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x767ebd24748720535fe3959d030d6ddc, transactions:[object Object]","timestamp":"2024-05-04T11:55:37.404Z"}
