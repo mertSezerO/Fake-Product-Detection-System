@@ -1,8 +1,6 @@
 const { contracts, logger } = require("../utils")
 const { SupplyChain } = contracts
 
-//Supplier check might be added.
-
 exports.getProductTransactions = async (req, res, next) => {
   const { productId } = req.params
 
@@ -52,13 +50,19 @@ exports.getProductTransactions = async (req, res, next) => {
 
 exports.createTransaction = async (req, res, next) => {
   const { productId } = req.params
-  const { receiver, condition } = req.body
+  const { companyName, condition } = req.body
 
   try {
     const address = await SupplyChain.methods.owner().call()
 
+    const response = await axios.post("http://192.168.68.51:3000/match", {
+      companyName: companyName,
+    })
+
+    const receiver = response.data.address
+
     SupplyChain.methods
-      .recordTransaction(productId, receiver, condition)
+      .recordTransaction(productId, response.data.address, condition)
       .send({ from: address, gas: 1000000 })
 
     const supplyEvent = await new Promise((resolve) => {

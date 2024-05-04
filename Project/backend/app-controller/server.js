@@ -14,8 +14,10 @@ app.use(CORS)
 app.use(express.json())
 
 const userRouter = require("./routes/user")
+const interserviceRouter = require("./routes/interservice")
 
 app.use(userRouter)
+app.use(interserviceRouter)
 
 mongoose
   .connect(process.env.DATABASE_URI)
