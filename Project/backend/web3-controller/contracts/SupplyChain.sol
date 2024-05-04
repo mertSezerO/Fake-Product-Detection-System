@@ -17,7 +17,8 @@ contract SupplyChain {
     event TransactionCreated(
         bytes16 productId,
         address sender,
-        address receiver
+        address receiver,
+        string condition
     );
     event SupplierAdded(address supplier);
 
@@ -40,7 +41,8 @@ contract SupplyChain {
 
     function recordTransaction(
         bytes16 _productId,
-        address _receiver
+        address _receiver,
+        string memory _condition
     ) external onlyManufacturer {
         address sender;
         if (transactionHistory[_productId].length == 0) {
@@ -51,9 +53,13 @@ contract SupplyChain {
             sender = transactionHistory[_productId][length - 1].receiver;
         }
         transactionHistory[_productId].push(
-            Types.Transaction({sender: sender, receiver: _receiver})
+            Types.Transaction({
+                sender: sender,
+                receiver: _receiver,
+                productStatus: _condition
+            })
         );
-        emit TransactionCreated(_productId, sender, _receiver);
+        emit TransactionCreated(_productId, sender, _receiver, _condition);
     }
 
     function getProductHistory(bytes16 _productId) external {

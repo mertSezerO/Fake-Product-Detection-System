@@ -7,11 +7,11 @@ library Types {
         bytes16 productId;
         address owner;
         string productName;
-        string productStatus;
     }
 
     struct Transaction {
         address sender;
         address receiver;
+        string productStatus;
     }
 }
