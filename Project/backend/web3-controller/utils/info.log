@@ -58,3 +58,17 @@
 {"level":"info","message":"Product Found with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, name: Magnezinc, status: Çöp","timestamp":"2024-05-03T16:32:52.763Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, transactions:[object Object]","timestamp":"2024-05-03T16:32:55.271Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x4b86ecd4bd75a4c2fb7239b5b8a9d830, transactions:[object Object]","timestamp":"2024-05-03T16:38:44.312Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:17:59.314Z"}
+{"level":"info","message":"New product added with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82","timestamp":"2024-05-04T10:18:12.292Z"}
+{"level":"info","message":"New product added with ID: 0x9832b1dd3d6731c904872bb9b91bede2","timestamp":"2024-05-04T10:18:24.284Z"}
+{"level":"info","message":"New product added with ID: 0x964aea341394270e426f4af5e5bc62dd","timestamp":"2024-05-04T10:18:48.574Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:20:16.256Z"}
+{"level":"info","message":"New transaction for product with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, transaction: {\"receiver\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\",\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\"}","timestamp":"2024-05-04T10:20:27.707Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:20:49.799Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:21:53.884Z"}
+{"level":"info","message":"Product Found with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, name: Citamin, status: Xood","timestamp":"2024-05-04T10:22:42.426Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, transactions:[object Object]","timestamp":"2024-05-04T10:22:47.952Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-04T10:23:42.136Z"}
+{"level":"info","message":"New transaction for product with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, transaction: {\"receiver\":\"0x7E3323d7d93500e2130738941E1E9EEd61c3806e\",\"sender\":\"0x0053EFcd6189506E460A3CFAcf854ed9Ff2fea66\"}","timestamp":"2024-05-04T10:24:16.084Z"}
+{"level":"info","message":"Product Found with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, name: Citamin, status: Xood","timestamp":"2024-05-04T10:24:28.962Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x694b9d8b90b4b19eb8d19b6ebf408d82, transactions:[object Object],[object Object]","timestamp":"2024-05-04T10:24:31.576Z"}

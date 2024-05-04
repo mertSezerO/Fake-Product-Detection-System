@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator();
 export default function CoreNavigation() {
   return (
     <CoreProvider>
-      <Stack.Navigator initialRouteName="UserRole">
+      <Stack.Navigator initialRouteName="Admin">
         <Stack.Screen
           name="Admin"
           component={AdminScreen}

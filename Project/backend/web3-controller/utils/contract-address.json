@@ -1,10 +1,10 @@
 {
   "Types": {
-    "address": "0xAD7D3EaDe871C55B247084fCcF91456F47cc35D7",
+    "address": "0x9fa299CeE2f5809e0059f007Cca157d2529ED954",
     "abi": []
   },
   "ProductAction": {
-    "address": "0x8BF82F72c45bD6BdEe1A77d10415C3462dbB059b",
+    "address": "0x97247717F92e605Af9DE691F2de859117b7A152E",
     "abi": [
       {
         "inputs": [],
@@ -281,7 +281,7 @@
     ]
   },
   "SupplyChain": {
-    "address": "0x692f703874165d80230391239de70088f1c1b6A8",
+    "address": "0x2Cd06D7097087438Ed651F43C3E3Fd22712f194C",
     "abi": [
       {
         "inputs": [],

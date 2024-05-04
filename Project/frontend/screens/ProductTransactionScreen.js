@@ -1,10 +1,8 @@
 import {
   View,
   Text,
-  SafeAreaView,
   ImageBackground,
   TouchableOpacity,
-  TextInput,
   ScrollView,
 } from "react-native";
 import React, { useContext } from "react";
