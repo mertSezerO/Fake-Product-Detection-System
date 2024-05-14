@@ -57,7 +57,7 @@ exports.createTransaction = async (req, res, next) => {
     const address = await SupplyChain.methods.owner().call();
 
     console.log(companyName);
-    const response = await axios.post("http://192.168.68.51:3001/match", {
+    const response = await axios.post("http://10.125.19.216:3001/match", {
       companyName: companyName,
     });
 

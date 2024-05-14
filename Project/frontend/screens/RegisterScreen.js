@@ -23,7 +23,7 @@ const RegisterScreen = () => {
   const handleRegister = async () => {
     try {
       if (password === confirmPassword) {
-        const response = await fetch("http://192.168.68.51:3001/users", {
+        const response = await fetch("http://10.125.19.216:3001/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

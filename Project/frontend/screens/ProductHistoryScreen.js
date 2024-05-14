@@ -1,3 +1,9 @@
+//handle alert boş
+//touchable ekli ama çalışmıyor
+//close ok ortalı istersen bak
+// core foundproductname çalışmıyor
+//koli ortada ama marginle
+
 import {
   View,
   Text,
@@ -5,6 +11,11 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  Button,
+  Modal,
+  TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import React from "react";
 import tailwindConfig from "../tailwind.config";
@@ -19,13 +30,15 @@ const ProductHistoryScreen = () => {
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
   const [productName, setProductName] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
   const [productHistory, setProductHistory] = useState([]);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const gatherHistory = async () => {
       try {
         const response = await fetch(
-          "http://192.168.68.51:3000/supply-chain/" +
+          "http://10.125.19.216:3000/supply-chain/" +
             coreContext.foundProduct.productId,
           {
             method: "GET",
@@ -44,6 +57,10 @@ const ProductHistoryScreen = () => {
 
     gatherHistory();
   }, []);
+
+  const handleAlert = async () => {
+    setModalVisible(false);
+  };
 
   return (
     <ImageBackground
@@ -78,11 +95,11 @@ const ProductHistoryScreen = () => {
                   key={index}
                 >
                   <Image
-                    className="flex-start"
+                    className="mt-10"
                     source={require("../assets/images/box.png")}
                     style={{ width: 30, height: 30 }}
                   ></Image>
-                  <View>
+                  <View className="mx-5">
                     <Text>Date: </Text>
                     <Text>Source: {item.sender}</Text>
                     <Text>Destination: {item.receiver}</Text>
@@ -92,6 +109,83 @@ const ProductHistoryScreen = () => {
               ))}
             </View>
           </ScrollView>
+          <View className="items-end">
+            <TouchableOpacity
+              className="py-4 bg-red-600 rounded-xl mb-20"
+              style={{ width: 90 }}
+            >
+              <Text
+                className="font-4xl text-white font-bold text-center"
+                onPress={() => setModalVisible(true)}
+              >
+                Alert
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => setModalVisible(false)}
+          >
+            <View
+              style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+              }}
+            >
+              <View
+                className="mx-10"
+                style={{
+                  backgroundColor: "white",
+                  padding: 20,
+                  borderRadius: 8,
+                }}
+              >
+                <Text
+                  className="text-center"
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    marginBottom: 10,
+                  }}
+                >
+                  Your request has been received. Following the review, we will
+                  get back to you via email.
+                </Text>
+                <Text
+                  className="mt-5"
+                  style={{
+                    fontSize: 15,
+                    fontWeight: "bold",
+                    marginBottom: 10,
+                  }}
+                >
+                  Email Adress
+                </Text>
+                <TouchableWithoutFeedback
+                  onPress={Keyboard.dismiss}
+                  accessible={false}
+                >
+                  <TextInput
+                    className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
+                    placeholder="Enter Email"
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}
+                  ></TextInput>
+                </TouchableWithoutFeedback>
+                <View className="flex-row justify-center content-between">
+                  <Button
+                    title="Close"
+                    onPress={() => setModalVisible(false)}
+                  />
+                  <Button title="OK" onPress={handleAlert} />
+                </View>
+              </View>
+            </View>
+          </Modal>
         </View>
       </View>
       <StatusBar style="auto" />

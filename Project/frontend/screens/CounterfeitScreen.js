@@ -44,14 +44,6 @@ export default function CounterfeitScreen() {
                   source={require("../assets/images/cross.png")}
                   style={{ width: 150, height: 150 }}
                 ></Image>
-                <TouchableOpacity
-                  className="py-4 bg-red-600 rounded-xl mb-20"
-                  style={{ width: 90 }}
-                >
-                  <Text className="font-4xl text-white font-bold text-center">
-                    Alert
-                  </Text>
-                </TouchableOpacity>
               </View>
             </View>
           </View>

@@ -3,6 +3,8 @@ import {
   Text,
   ImageBackground,
   TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
   TextInput,
   Button,
   Modal,
@@ -25,7 +27,7 @@ const AddProductScreen = () => {
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch("http://192.168.68.51:3000/product", {
+      const response = await fetch("http://10.125.19.216:3000/product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,83 +74,85 @@ const AddProductScreen = () => {
         </TouchableOpacity>
       </View>
       <View className="flex-1 flex justify-end">
-        <View
-          className="flex-2/3 bg-white px-10 pt-10"
-          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
-        >
-          <Text className="text-gray font-bold text-4xl text-center">
-            Add New Product
-          </Text>
-          <View className="form space-y-2">
-            <View className="mb-10 mt-10">
-              <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Product Name
-              </Text>
-              <TextInput
-                className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
-                placeholder="Enter Product Name"
-                value={productName}
-                onChangeText={(text) => setProductName(text)}
-              ></TextInput>
-              <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Product Status
-              </Text>
-              <TextInput
-                className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                placeholder="Enter Product Status"
-                value={productStatus}
-                onChangeText={(text) => setProductStatus(text)}
-              ></TextInput>
-            </View>
-            <View className="mb-20 mt-20 space-y-4">
-              <TouchableOpacity
-                className="py-4 bg-gray-900 rounded-xl"
-                onPress={handleAddProduct}
-              >
-                <Text className="font-3xl text-white font-extrabold text-center">
-                  Add Product
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          <View
+            className="flex-2/3 bg-white px-10 pt-10"
+            style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
+          >
+            <Text className="text-gray font-bold text-4xl text-center">
+              Add New Product
+            </Text>
+            <View className="form space-y-2">
+              <View className="mb-10 mt-10">
+                <Text className="text-gray-700 font-bold mb-1 ml-4">
+                  Product Name
                 </Text>
-              </TouchableOpacity>
-              <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => setModalVisible(false)}
-              >
-                <View
-                  style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  }}
+                <TextInput
+                  className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
+                  placeholder="Enter Product Name"
+                  value={productName}
+                  onChangeText={(text) => setProductName(text)}
+                ></TextInput>
+                <Text className="text-gray-700 font-bold mb-1 ml-4">
+                  Product Status
+                </Text>
+                <TextInput
+                  className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
+                  placeholder="Enter Product Status"
+                  value={productStatus}
+                  onChangeText={(text) => setProductStatus(text)}
+                ></TextInput>
+              </View>
+              <View className="mb-20 mt-20 space-y-4">
+                <TouchableOpacity
+                  className="py-4 bg-gray-900 rounded-xl"
+                  onPress={handleAddProduct}
+                >
+                  <Text className="font-3xl text-white font-extrabold text-center">
+                    Add Product
+                  </Text>
+                </TouchableOpacity>
+                <Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={modalVisible}
+                  onRequestClose={() => setModalVisible(false)}
                 >
                   <View
                     style={{
-                      backgroundColor: "white",
-                      padding: 20,
-                      borderRadius: 8,
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: "rgba(0, 0, 0, 0.5)",
                     }}
                   >
-                    <Text
+                    <View
                       style={{
-                        fontSize: 18,
-                        fontWeight: "bold",
-                        marginBottom: 10,
+                        backgroundColor: "white",
+                        padding: 20,
+                        borderRadius: 8,
                       }}
                     >
-                      Product added successfully
-                    </Text>
-                    <Button
-                      title="Close"
-                      onPress={() => setModalVisible(false)}
-                    />
+                      <Text
+                        style={{
+                          fontSize: 18,
+                          fontWeight: "bold",
+                          marginBottom: 10,
+                        }}
+                      >
+                        Product added successfully
+                      </Text>
+                      <Button
+                        title="Close"
+                        onPress={() => setModalVisible(false)}
+                      />
+                    </View>
                   </View>
-                </View>
-              </Modal>
+                </Modal>
+              </View>
             </View>
           </View>
-        </View>
+        </TouchableWithoutFeedback>
       </View>
       <StatusBar style="auto" />
     </ImageBackground>

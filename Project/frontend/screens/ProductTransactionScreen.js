@@ -49,7 +49,7 @@ const ProductTransactionScreen = () => {
           <ScrollView>
             {coreContext.products.map((item, index) => (
               <View
-                className="flex-row bg-gray-200 mb-10 p-5 rounded-full"
+                className="flex-row bg-gray-200 mb-10 p-5 rounded-full items-center justify-between"
                 key={index}
               >
                 <View>
@@ -60,7 +60,7 @@ const ProductTransactionScreen = () => {
                   </Text>
                 </View>
 
-                <View>
+                <View className="">
                   <TouchableOpacity
                     className="py-4 bg-gray-800 rounded-xl"
                     style={{ width: 70 }}

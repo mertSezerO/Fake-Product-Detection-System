@@ -3,6 +3,8 @@ import {
   Text,
   ImageBackground,
   TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
   TextInput,
   Button,
   Modal,
@@ -28,7 +30,7 @@ const CreateTransactionScreen = () => {
     const { productId } = coreContext.selectedProduct;
     try {
       const response = await fetch(
-        "http://192.168.68.51:3000/supply-chain/" + productId,
+        "http://10.125.19.216:3000/supply-chain/" + productId,
         {
           method: "POST",
           headers: {
@@ -65,84 +67,86 @@ const CreateTransactionScreen = () => {
         </TouchableOpacity>
       </View>
       <View className="flex-1 flex justify-end">
-        <View
-          className="flex-2/3 bg-white px-10 pt-10"
-          style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
-        >
-          <Text className="text-gray font-bold text-4xl text-center">
-            {coreContext.selectedProduct.productName}
-          </Text>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          <View
+            className="flex-2/3 bg-white px-10 pt-10"
+            style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
+          >
+            <Text className="text-gray font-bold text-4xl text-center">
+              {coreContext.selectedProduct.productName}
+            </Text>
 
-          <View className="form space-y-2">
-            <View className="mb-10 mt-10">
-              <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Destination
-              </Text>
-              <TextInput
-                className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
-                placeholder="Enter Company Name"
-                value={companyName}
-                onChangeText={(text) => setCompanyName(text)}
-              ></TextInput>
-              <Text className="text-gray-700 font-bold mb-1 ml-4">
-                Condition
-              </Text>
-              <TextInput
-                className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                placeholder="Enter Product Condition"
-                value={productCondition}
-                onChangeText={(text) => setProductCondition(text)}
-              ></TextInput>
-            </View>
-            <View className="mb-20 mt-20 space-y-4">
-              <TouchableOpacity
-                className="py-4 bg-gray-900 rounded-xl"
-                onPress={handleTransaction}
-              >
-                <Text className="font-3xl text-white font-extrabold text-center">
-                  Create Transaction
+            <View className="form space-y-2">
+              <View className="mb-10 mt-10">
+                <Text className="text-gray-700 font-bold mb-1 ml-4">
+                  Destination
                 </Text>
-              </TouchableOpacity>
-              <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => setModalVisible(false)}
-              >
-                <View
-                  style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  }}
+                <TextInput
+                  className="p-4 bg-gray-200 text-gray-700 rounded-2xl mb-5"
+                  placeholder="Enter Company Name"
+                  value={companyName}
+                  onChangeText={(text) => setCompanyName(text)}
+                ></TextInput>
+                <Text className="text-gray-700 font-bold mb-1 ml-4">
+                  Condition
+                </Text>
+                <TextInput
+                  className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
+                  placeholder="Enter Product Condition"
+                  value={productCondition}
+                  onChangeText={(text) => setProductCondition(text)}
+                ></TextInput>
+              </View>
+              <View className="mb-20 mt-20 space-y-4">
+                <TouchableOpacity
+                  className="py-4 bg-gray-900 rounded-xl"
+                  onPress={handleTransaction}
+                >
+                  <Text className="font-3xl text-white font-extrabold text-center">
+                    Create Transaction
+                  </Text>
+                </TouchableOpacity>
+                <Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={modalVisible}
+                  onRequestClose={() => setModalVisible(false)}
                 >
                   <View
                     style={{
-                      backgroundColor: "white",
-                      padding: 20,
-                      borderRadius: 8,
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: "rgba(0, 0, 0, 0.5)",
                     }}
                   >
-                    <Text
+                    <View
                       style={{
-                        fontSize: 18,
-                        fontWeight: "bold",
-                        marginBottom: 10,
+                        backgroundColor: "white",
+                        padding: 20,
+                        borderRadius: 8,
                       }}
                     >
-                      Transaction created successfully
-                    </Text>
-                    <Button
-                      title="Close"
-                      onPress={() => setModalVisible(false)}
-                    />
+                      <Text
+                        style={{
+                          fontSize: 18,
+                          fontWeight: "bold",
+                          marginBottom: 10,
+                        }}
+                      >
+                        Transaction created successfully
+                      </Text>
+                      <Button
+                        title="Close"
+                        onPress={() => setModalVisible(false)}
+                      />
+                    </View>
                   </View>
-                </View>
-              </Modal>
+                </Modal>
+              </View>
             </View>
           </View>
-        </View>
+        </TouchableWithoutFeedback>
       </View>
       <StatusBar style="auto" />
     </ImageBackground>

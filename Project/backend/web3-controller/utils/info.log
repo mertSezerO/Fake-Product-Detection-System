@@ -111,3 +111,104 @@
 {"level":"info","message":"All products returned","timestamp":"2024-05-04T11:54:56.856Z"}
 {"level":"info","message":"Product Found with ID: 0x767ebd24748720535fe3959d030d6ddc, name: Aspirin","timestamp":"2024-05-04T11:55:33.217Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x767ebd24748720535fe3959d030d6ddc, transactions:[object Object]","timestamp":"2024-05-04T11:55:37.404Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-08T16:46:54.684Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-08T16:48:00.943Z"}
+{"level":"info","message":"Product Found with ID: 0x8ff71b22a511abdc0256d80197f0688c, name: Tylolhot","timestamp":"2024-05-08T16:48:29.305Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x8ff71b22a511abdc0256d80197f0688c, transactions:","timestamp":"2024-05-08T16:48:32.716Z"}
+{"level":"info","message":"Product Found with ID: 0x8ff71b22a511abdc0256d80197f0688c, name: Tylolhot","timestamp":"2024-05-08T16:48:34.324Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T16:48:44.776Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:48:46.127Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:49:12.822Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:49:15.231Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:49:21.803Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:49:34.353Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:49:42.050Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:52:08.683Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:52:15.997Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:52:48.294Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T16:54:24.586Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T16:56:38.821Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T16:57:01.617Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:57:02.502Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:59:14.119Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T16:59:38.800Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:00:03.682Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:00:40.399Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:01:03.426Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:01:10.224Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:01:51.169Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:01:58.025Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:02:09.567Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:02:40.695Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:03:20.033Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:03:33.577Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T17:04:42.880Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T17:05:04.398Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:05:05.371Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:06:49.632Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:06:55.484Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:06:58.150Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:07:18.298Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:07:36.138Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:07:39.709Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:09:28.641Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T17:10:39.725Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:10:40.987Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:10:59.010Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:11:18.222Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:11:26.527Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:11:36.761Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:12:10.430Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:12:49.579Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:12:52.648Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:12:56.002Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:13:05.343Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:13:28.082Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:13:45.997Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:13:58.617Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:14:08.139Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:14:16.185Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:14:22.256Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:14:28.199Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:14:32.480Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:15:09.662Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:15:15.125Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:15:35.565Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:16:02.563Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:23:02.975Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T17:40:48.790Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:40:49.925Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:41:26.124Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:42:21.549Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:42:29.656Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:43:21.675Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:43:26.261Z"}
+{"level":"info","message":"Product Found with ID: 0x177ab83af0948ba568bd1a93de2d4006, name: Gitamin","timestamp":"2024-05-08T17:44:57.624Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:44:59.111Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:45:14.782Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf0df4576159cfe2515861407bb595fa2, transactions:","timestamp":"2024-05-08T17:45:50.151Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:48:09.737Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:48:52.888Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:04.480Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:07.314Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:22.652Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:28.823Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:32.570Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:42.525Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:46.434Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:50:55.766Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:51:00.203Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:51:25.107Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:52:44.885Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:52:56.435Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x177ab83af0948ba568bd1a93de2d4006, transactions:[object Object],[object Object]","timestamp":"2024-05-08T17:53:23.896Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-08T17:53:53.273Z"}
+{"level":"info","message":"New product added with ID: 0xffc7c245239a6327e1a0962a0f54b1e5","timestamp":"2024-05-08T17:54:03.527Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-09T10:02:06.119Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-09T10:03:14.666Z"}
+{"level":"info","message":"New product added with ID: 0xbad3468744cb125a89505c59d6181488","timestamp":"2024-05-09T10:03:37.181Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-09T10:06:22.664Z"}
+{"level":"info","message":"New transaction for product with ID: 0xbad3468744cb125a89505c59d6181488, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0x6D2F9D2267E8c768E26450BF4922FdA41227D807\",\"condition\":\"Bad\"}","timestamp":"2024-05-09T10:06:51.627Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-09T10:07:17.031Z"}
+{"level":"info","message":"Product Found with ID: 0xbad3468744cb125a89505c59d6181488, name: Parol","timestamp":"2024-05-09T10:07:30.112Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xbad3468744cb125a89505c59d6181488, transactions:[object Object]","timestamp":"2024-05-09T10:07:38.603Z"}
