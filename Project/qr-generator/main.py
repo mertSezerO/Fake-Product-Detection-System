@@ -1,18 +1,30 @@
 import pyqrcode
-import png
 from pyqrcode import QRCode
-import urllib3
 import json
 import os
 
-http = urllib3.PoolManager()
+from flask import Flask, request, make_response
 
-response = http.request("GET", "http://localhost:3000/product")
+app = Flask(__name__)
 
-data = response.data.decode("utf-8")
-parsed_data = json.loads(data)
 
-for product in parsed_data["products"]:
-    qr = pyqrcode.create(product["productId"])
-    file_path = os.path.join("./qr-codes", product["productId"] + ".png")
-    qr.png(file_path, scale=6)
+@app.route("/qr", methods=["POST"])
+def create_qr():
+    json_data = request.data.decode("utf-8")
+    data = json.loads(json_data)
+
+    try:
+        qr = pyqrcode.create(data["productId"])
+        file_path = os.path.join("./qr-codes", data["productName"] + ".png")
+        qr.png(file_path, scale=8)
+        return make_response(
+            "QR successfully generated for product with ID: {}".format(
+                data["productId"]
+            ),
+            201,
+        )
+    except Exception:
+        return make_response("Internal Server Error", 500)
+
+
+app.run(port=3002)
