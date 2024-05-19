@@ -63,7 +63,7 @@ exports.updateUser = async (req, res, next) => {
 }
 
 exports.createUser = async (req, res, next) => {
-  const { password, userRole } = req.body
+  const { password } = req.body
   const hashedPassword = bcrypt.hashSync(password, 10)
 
   const addressResponse = await axios.get("http://10.125.19.216:3000/address")
@@ -73,7 +73,6 @@ exports.createUser = async (req, res, next) => {
     password: hashedPassword,
     address: addressResponse.data.address,
     companyName: req.body.companyName,
-    role: userRole,
   }
 
   try {

@@ -33,6 +33,12 @@ exports.getProductTransactions = async (req, res, next) => {
       transactionDate: transaction.transactionDate,
     }))
 
+    const response = await axios.get("http://localhost:3001/match/companies", {
+      transactions: transactions,
+    })
+
+    transactions = response.data.transactions
+
     logger.info(
       `Transactions of Product with ID: ${productId}, transactions:${transactions}`
     )
@@ -63,7 +69,7 @@ exports.createTransaction = async (req, res, next) => {
     const address = await SupplyChain.methods.owner().call()
 
     console.log(companyName)
-    const response = await axios.post("http://localhost:3001/match", {
+    const response = await axios.post("http://localhost:3001/match/address", {
       companyName: companyName,
     })
 
