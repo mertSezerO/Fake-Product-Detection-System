@@ -46,68 +46,34 @@ const LoginScreen = () => {
     }
   };
 
-  const checkPasswordValidity = (value) => {
-    const isNonWhiteSpace = /^\S*$/;
-    if (!isNonWhiteSpace.test(value)) {
-      return "Password must not contain whitescapes.";
-    }
-
-    const isContainsUppercase = /^(?=.*[A-Z]).*$/;
-    if (!isContainsUppercase.test(value)) {
-      return "Password must have at least one uppercase character.";
-    }
-
-    const isContainsLowercase = /^(?=.*[a-z]).*$/;
-    if (!isContainsLowercase.test(value)) {
-      return "Password must have at least one lowercase character.";
-    }
-
-    const isContainsNumber = /^(?=.*[0-9]).*$/;
-    if (!isContainsNumber.test(value)) {
-      return "Password must contain at least one digit.";
-    }
-
-    const isValidLength = /^.{8,16}$/;
-    if (!isValidLength.test(value)) {
-      return "Password must be 8-16 characters long.";
-    }
-
-    return null;
-  };
-
   const handleLogin = async () => {
-    const checkPassword = checkPasswordValidity(password);
-    if (!checkPassword) {
-      try {
-        const response = await fetch("http://10.125.19.216:3001/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        });
+    try {
+      const response = await fetch("http://10.125.23.167:3001/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
 
-        if (response.status !== 201) {
-          throw Error(response.message);
-        }
-
-        const responseData = await response.json();
-        appContext.setUserToken(responseData.token);
-        //check timestamp of token
-        if (appContext.userRole === "Manufacturer") {
-          navigation.navigate("Core", { screen: "Admin" });
-        } else {
-          navigation.navigate("Core", { screen: "Check" });
-        }
-      } catch (error) {
-        setModalVisible(true);
-        console.log(error);
+      if (response.status !== 201) {
+        throw Error(response.message);
       }
-    } else {
-      alert(checkPassword);
+
+      const responseData = await response.json();
+      appContext.setUserToken(responseData.token);
+      //check timestamp of token
+      if (appContext.userRole === "Manufacturer") {
+        navigation.navigate("Core", { screen: "Admin" });
+      } else {
+        navigation.navigate("Core", { screen: "Check" });
+      }
+    } catch (error) {
+      setModalVisible(true);
+      console.log(error);
     }
   };
 

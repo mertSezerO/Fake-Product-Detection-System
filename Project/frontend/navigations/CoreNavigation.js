@@ -11,6 +11,7 @@ import ProductFoundScreen from "../screens/ProductFoundScreen";
 import AdminScreen from "../screens/AdminScreen";
 import ProductTransactionScreen from "../screens/ProductTransactionScreen";
 import CreateTransactionScreen from "../screens/CreateTransactionScreen";
+import SellerProductFoundScreen from "../screens/SellerProductFoundScreen";
 
 import CoreProvider from "../contexts/CoreContext";
 
@@ -63,6 +64,11 @@ export default function CoreNavigation() {
         <Stack.Screen
           name="CreateTransaction"
           component={CreateTransactionScreen}
+          options={{ headerShown: false }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="SellerProductFound"
+          component={SellerProductFoundScreen}
           options={{ headerShown: false }}
         ></Stack.Screen>
       </Stack.Navigator>

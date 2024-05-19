@@ -26,7 +26,7 @@ const CheckScreen = () => {
 
   onScan = async (e) => {
     const response = await fetch(
-      "http://10.125.19.216:3000/product/" + e.data,
+      "http://10.125.23.167:3000/product/" + e.data,
       {
         method: "GET",
         headers: {
@@ -34,7 +34,6 @@ const CheckScreen = () => {
         },
       }
     );
-
     if (!scanned.current) {
       scanned.current = true;
       if (response.status !== 200) {
@@ -45,7 +44,7 @@ const CheckScreen = () => {
       coreContext.setFoundProduct(product);
 
       if (appContext.userRole === "Seller") {
-        navigation.navigate("Core", { screen: "ProductTransaction" });
+        navigation.navigate("Core", { screen: "SellerProductFound" });
       } else {
         navigation.navigate("Core", { screen: "ProductFound" });
       }

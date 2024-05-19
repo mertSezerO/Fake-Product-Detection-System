@@ -21,7 +21,7 @@ export default function AdminScreen() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://10.125.19.216:3000/product", {
+        const response = await fetch("http://10.125.23.167:3000/product", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function AdminScreen() {
       <View className="flex-1 justify-start">
         <TouchableOpacity
           className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Auth", { screen: "Login" })}
+          onPress={() => navigation.navigate("Auth", { screen: "Welcome" })}
         >
           <ArrowLeftIcon size="30" color="white" />
         </TouchableOpacity>

@@ -30,7 +30,7 @@ const CreateTransactionScreen = () => {
     const { productId } = coreContext.selectedProduct;
     try {
       const response = await fetch(
-        "http://10.125.19.216:3000/supply-chain/" + productId,
+        "http://10.125.23.167:3000/supply-chain/" + productId,
         {
           method: "POST",
           headers: {
@@ -61,7 +61,13 @@ const CreateTransactionScreen = () => {
       <View className="flex-1 justify-start">
         <TouchableOpacity
           className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Admin")}
+          onPress={() => {
+            if (appContext.userRole === "Manufacturer") {
+              navigation.navigate("Core", { screen: "Admin" });
+            } else {
+              navigation.navigate("Core", { screen: "SellerProductFound" });
+            }
+          }}
         >
           <ArrowLeftIcon size="30" color="white" />
         </TouchableOpacity>

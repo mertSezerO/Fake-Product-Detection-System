@@ -27,7 +27,7 @@ const AddProductScreen = () => {
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch("http://10.125.19.216:3000/product", {
+      const response = await fetch("http://10.125.23.167:3000/product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
