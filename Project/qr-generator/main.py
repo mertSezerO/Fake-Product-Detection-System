@@ -15,7 +15,9 @@ def create_qr():
 
     try:
         qr = pyqrcode.create(data["productId"])
-        file_path = os.path.join("./qr-codes", data["productName"] + ".png")
+        file_path = os.path.join(
+            "./qr-codes", data["productName"] + data["productId"] + ".png"
+        )
         qr.png(file_path, scale=8)
         return make_response(
             "QR successfully generated for product with ID: {}".format(

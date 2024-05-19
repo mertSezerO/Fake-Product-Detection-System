@@ -42,7 +42,8 @@ contract SupplyChain {
     function recordTransaction(
         bytes16 _productId,
         address _receiver,
-        string memory _condition
+        string memory _condition,
+        string memory _date
     ) external onlyManufacturer {
         address sender;
         if (transactionHistory[_productId].length == 0) {
@@ -56,7 +57,8 @@ contract SupplyChain {
             Types.Transaction({
                 sender: sender,
                 receiver: _receiver,
-                productStatus: _condition
+                productStatus: _condition,
+                transactionDate: _date
             })
         );
         emit TransactionCreated(_productId, sender, _receiver, _condition);

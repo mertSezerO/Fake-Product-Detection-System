@@ -212,3 +212,9 @@
 {"level":"info","message":"All products returned","timestamp":"2024-05-09T10:07:17.031Z"}
 {"level":"info","message":"Product Found with ID: 0xbad3468744cb125a89505c59d6181488, name: Parol","timestamp":"2024-05-09T10:07:30.112Z"}
 {"level":"info","message":"Transactions of Product with ID: 0xbad3468744cb125a89505c59d6181488, transactions:[object Object]","timestamp":"2024-05-09T10:07:38.603Z"}
+{"level":"info","message":"New product added with ID: 0x44ab7dda0d159a38f5b58d4646be6237","timestamp":"2024-05-15T10:46:43.962Z"}
+{"level":"info","message":"New transaction for product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transaction: {\"sender\":\"0xFF983A06271EAacE62AFc4b5D13803308E304a0a\",\"receiver\":\"0x7E3323d7d93500e2130738941E1E9EEd61c3806e\",\"condition\":\"Good\"}","timestamp":"2024-05-15T10:50:26.450Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:50:40.904Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:53:58.831Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:54:00.963Z"}
+{"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:56:48.803Z"}
