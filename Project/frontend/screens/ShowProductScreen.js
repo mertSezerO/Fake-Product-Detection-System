@@ -47,9 +47,6 @@ const ShowProductScreen = () => {
             {coreContext.products.map((item, index) => (
               <View className="bg-gray-200 mb-10 p-5 rounded-full" key={index}>
                 <Text className="font-bold text-lg">{item.productName}</Text>
-                <Text>
-                  Product Status: {coreContext.products[index].productStatus}
-                </Text>
               </View>
             ))}
           </ScrollView>

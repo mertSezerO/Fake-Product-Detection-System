@@ -17,6 +17,7 @@ import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
 
 import { CoreContext } from "../contexts/CoreContext";
+import { AppContext } from "../contexts/AppContext";
 
 const CreateTransactionScreen = () => {
   const [companyName, setCompanyName] = useState("");
@@ -25,12 +26,13 @@ const CreateTransactionScreen = () => {
 
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
+  const appContext = useContext(AppContext);
 
   const handleTransaction = async () => {
     const { productId } = coreContext.selectedProduct;
     try {
       const response = await fetch(
-        "http://10.125.23.167:3000/supply-chain/" + productId,
+        "http://10.125.16.166:3000/supply-chain/" + productId,
         {
           method: "POST",
           headers: {

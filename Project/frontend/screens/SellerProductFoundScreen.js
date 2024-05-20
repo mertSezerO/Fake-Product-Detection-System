@@ -51,7 +51,7 @@ const SellerProductFoundScreen = () => {
           </View>
 
           <TouchableOpacity
-            className="py-4 bg-gray-900 rounded-xl mb-20"
+            className="py-4 bg-gray-900 rounded-xl mb-5"
             onPress={() => navigation.navigate("ProductHistory")}
           >
             <Text className="font-3xl text-white font-bold text-center">

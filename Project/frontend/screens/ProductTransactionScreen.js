@@ -54,10 +54,6 @@ const ProductTransactionScreen = () => {
               >
                 <View>
                   <Text className="font-bold text-lg">{item.productName}</Text>
-
-                  <Text>
-                    Product Status: {coreContext.products[index].productStatus}
-                  </Text>
                 </View>
 
                 <View className="">

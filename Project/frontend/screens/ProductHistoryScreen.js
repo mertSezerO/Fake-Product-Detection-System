@@ -38,7 +38,7 @@ const ProductHistoryScreen = () => {
     const gatherHistory = async () => {
       try {
         const response = await fetch(
-          "http://10.125.23.167:3000/supply-chain/" +
+          "http://10.125.16.166:3000/supply-chain/" +
             coreContext.foundProduct.productId,
           {
             method: "GET",
@@ -95,12 +95,12 @@ const ProductHistoryScreen = () => {
                   key={index}
                 >
                   <Image
-                    className="mt-10"
+                    className="mt-5"
                     source={require("../assets/images/box.png")}
                     style={{ width: 30, height: 30 }}
                   ></Image>
                   <View className="mx-5">
-                    <Text>Date: </Text>
+                    <Text>Date: {item.transactionDate}</Text>
                     <Text>Source: {item.sender}</Text>
                     <Text>Destination: {item.receiver}</Text>
                     <Text>Condition: {item.productStatus}</Text>

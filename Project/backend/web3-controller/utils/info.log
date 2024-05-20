@@ -218,3 +218,44 @@
 {"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:53:58.831Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:54:00.963Z"}
 {"level":"info","message":"Transactions of Product with ID: 0x44ab7dda0d159a38f5b58d4646be6237, transactions:[object Object]","timestamp":"2024-05-15T10:56:48.803Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-19T19:19:24.217Z"}
+{"level":"info","message":"New product added with ID: 0x3d34e3ff8c1444220309eb0cbe49a190","timestamp":"2024-05-19T19:26:20.617Z"}
+{"level":"info","message":"New product added with ID: 0xe0cc287e7e7270611e8106aea05fa45a","timestamp":"2024-05-19T19:26:52.545Z"}
+{"level":"info","message":"New product added with ID: 0xf182d589f2ec24a2e44473afaa8a5442","timestamp":"2024-05-19T19:27:28.670Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-19T19:35:27.844Z"}
+{"level":"info","message":"New transaction for product with ID: 0x3bd8c24a50393b64049dc736f09bd68c, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0xcD3bB41903eb8f82801f590e0C0A70Bf0CC5be18\",\"condition\":\"Good\"}","timestamp":"2024-05-19T19:35:46.157Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-19T19:39:35.745Z"}
+{"level":"info","message":"New transaction for product with ID: 0xe0cc287e7e7270611e8106aea05fa45a, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0x7c074e6511C493e48eB56960650fC2a66c4e3F4A\",\"condition\":\"Good\"}","timestamp":"2024-05-19T19:40:29.546Z"}
+{"level":"info","message":"New transaction for product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transaction: {\"sender\":\"0x20A4F42343d60A876644173083deF897040b90F1\",\"receiver\":\"0xcD3bB41903eb8f82801f590e0C0A70Bf0CC5be18\",\"condition\":\"Good\"}","timestamp":"2024-05-19T19:40:59.061Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-19T19:42:06.377Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-19T19:47:39.572Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-19T19:47:44.592Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-19T19:47:49.618Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-19T19:48:11.013Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-19T19:55:11.917Z"}
+{"level":"info","message":"Product Found with ID: 0xe0cc287e7e7270611e8106aea05fa45a, name: Redoxon","timestamp":"2024-05-20T10:50:10.467Z"}
+{"level":"info","message":"Product Found with ID: 0xe0cc287e7e7270611e8106aea05fa45a, name: Redoxon","timestamp":"2024-05-20T10:50:25.517Z"}
+{"level":"info","message":"Product Found with ID: 0xe0cc287e7e7270611e8106aea05fa45a, name: Redoxon","timestamp":"2024-05-20T10:50:30.517Z"}
+{"level":"info","message":"Product Found with ID: 0xe0cc287e7e7270611e8106aea05fa45a, name: Redoxon","timestamp":"2024-05-20T10:50:35.539Z"}
+{"level":"info","message":"All products returned","timestamp":"2024-05-20T11:06:18.466Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:26:37.506Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:29:36.807Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:38:54.519Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:41:58.531Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:43:31.806Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:49:00.191Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:50:08.854Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:51:45.713Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:51:49.228Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:52:32.308Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:53:15.803Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:53:22.317Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:53:22.683Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:54:26.997Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:56:47.018Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:56:48.179Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object]","timestamp":"2024-05-20T12:58:19.966Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T12:59:21.109Z"}
+{"level":"info","message":"New transaction for product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transaction: {\"sender\":\"0xcD3bB41903eb8f82801f590e0C0A70Bf0CC5be18\",\"receiver\":\"0x7c074e6511C493e48eB56960650fC2a66c4e3F4A\",\"condition\":\"Good\"}","timestamp":"2024-05-20T13:09:48.844Z"}
+{"level":"info","message":"Product Found with ID: 0xf182d589f2ec24a2e44473afaa8a5442, name: Bepanthol","timestamp":"2024-05-20T13:10:45.455Z"}
+{"level":"info","message":"Transactions of Product with ID: 0xf182d589f2ec24a2e44473afaa8a5442, transactions:[object Object],[object Object]","timestamp":"2024-05-20T13:10:47.704Z"}

@@ -20,21 +20,19 @@ import { CoreContext } from "../contexts/CoreContext";
 
 const AddProductScreen = () => {
   const [productName, setProductName] = useState("");
-  const [productStatus, setProductStatus] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch("http://10.125.23.167:3000/product", {
+      const response = await fetch("http://10.125.16.166:3000/product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           productName: productName,
-          productStatus: productStatus,
         }),
       });
 
@@ -47,7 +45,6 @@ const AddProductScreen = () => {
       const newProduct = {
         productId: productId,
         productName: productName,
-        productStatus: productStatus,
       };
       const newProducts = [...coreContext.products, newProduct];
 
@@ -92,15 +89,6 @@ const AddProductScreen = () => {
                   placeholder="Enter Product Name"
                   value={productName}
                   onChangeText={(text) => setProductName(text)}
-                ></TextInput>
-                <Text className="text-gray-700 font-bold mb-1 ml-4">
-                  Product Status
-                </Text>
-                <TextInput
-                  className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                  placeholder="Enter Product Status"
-                  value={productStatus}
-                  onChangeText={(text) => setProductStatus(text)}
                 ></TextInput>
               </View>
               <View className="mb-20 mt-20 space-y-4">
