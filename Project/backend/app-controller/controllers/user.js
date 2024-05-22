@@ -66,7 +66,7 @@ exports.createUser = async (req, res, next) => {
   const { password } = req.body;
   const hashedPassword = bcrypt.hashSync(password, 10);
 
-  const addressResponse = await axios.get("http://10.125.16.166:3000/address");
+  const addressResponse = await axios.get("http://192.168.68.55:3000/address");
   const newUser = {
     username: req.body.username,
     email: req.body.email,

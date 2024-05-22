@@ -72,7 +72,7 @@ const RegisterScreen = () => {
     if (!checkPassword) {
       try {
         if (password === confirmPassword) {
-          const response = await fetch("http://10.125.16.166:3001/users", {
+          const response = await fetch("http://192.168.68.55:3001/users", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

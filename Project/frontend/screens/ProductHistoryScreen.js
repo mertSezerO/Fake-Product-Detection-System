@@ -25,10 +25,12 @@ import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
 
 import { CoreContext } from "../contexts/CoreContext";
+import { AppContext } from "../contexts/AppContext";
 
 const ProductHistoryScreen = () => {
   const navigation = useNavigation();
   const coreContext = useContext(CoreContext);
+  const appContext = useContext(AppContext);
   const [productName, setProductName] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [productHistory, setProductHistory] = useState([]);
@@ -38,7 +40,7 @@ const ProductHistoryScreen = () => {
     const gatherHistory = async () => {
       try {
         const response = await fetch(
-          "http://10.125.16.166:3000/supply-chain/" +
+          "http://192.168.68.55:3000/supply-chain/" +
             coreContext.foundProduct.productId,
           {
             method: "GET",
@@ -70,7 +72,11 @@ const ProductHistoryScreen = () => {
       <View className="flex-1 justify-start">
         <TouchableOpacity
           className="p-3 ml-4 mt-8"
-          onPress={() => navigation.navigate("Welcome")}
+          onPress={() =>
+            appContext.userRole === "Seller"
+              ? navigation.navigate("SellerProductFound")
+              : navigation.navigate("ProductFound")
+          }
         >
           <ArrowLeftIcon size="30" color="white" />
         </TouchableOpacity>

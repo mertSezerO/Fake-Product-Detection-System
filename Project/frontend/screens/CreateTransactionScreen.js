@@ -29,10 +29,14 @@ const CreateTransactionScreen = () => {
   const appContext = useContext(AppContext);
 
   const handleTransaction = async () => {
-    const { productId } = coreContext.selectedProduct;
+    const { productId } =
+      appContext.userRole === "Manufacturer"
+        ? coreContext.selectedProduct
+        : coreContext.foundProduct;
+
     try {
       const response = await fetch(
-        "http://10.125.16.166:3000/supply-chain/" + productId,
+        "http://192.168.68.55:3000/supply-chain/" + productId,
         {
           method: "POST",
           headers: {

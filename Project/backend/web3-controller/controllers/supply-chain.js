@@ -34,7 +34,7 @@ exports.getProductTransactions = async (req, res, next) => {
     }));
 
     const response = await axios.post(
-      "http://10.125.16.166:3001/match/companies",
+      "http://192.168.68.55:3001/match/companies",
       {
         transactions: transactions,
       }
@@ -73,7 +73,7 @@ exports.createTransaction = async (req, res, next) => {
 
     console.log(companyName);
     const response = await axios.post(
-      "http://10.125.16.166:3001/match/address",
+      "http://192.168.68.55:3001/match/address",
       {
         companyName: companyName,
       }

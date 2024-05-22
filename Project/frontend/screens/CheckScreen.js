@@ -6,7 +6,7 @@ import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
 import { CoreContext } from "../contexts/CoreContext";
 import { AppContext } from "../contexts/AppContext";
-import { Camera } from "expo-camera";
+import { Camera } from "expo-camera/legacy";
 
 const CheckScreen = () => {
   const navigation = useNavigation();
@@ -26,7 +26,7 @@ const CheckScreen = () => {
 
   onScan = async (e) => {
     const response = await fetch(
-      "http://10.125.16.166:3000/product/" + e.data,
+      "http://192.168.68.55:3000/product/" + e.data,
       {
         method: "GET",
         headers: {
